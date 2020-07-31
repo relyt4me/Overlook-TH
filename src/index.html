@@ -10,12 +10,23 @@
       <p class="address" alt="hotel address">1234 Mountain Street</p>
       <p class="phone-number" alt="hotel number">555-555-5555</p>
     </header>
-    <form rule="Login for User" action="">
+    <form rule="Login for User" action="" class="login-form">
       <label for="username">Username</label>
       <input type="text" name="username" id="username" />
       <label for="password">Password</label>
       <input type="password" name="password" id="password" />
       <button type="submit" class="login-button" id="login-button">Login</button>
+    </form>
+    <form rule="Room Search" action="" class="room-search">
+      <label for="room-date-search">Date</label>
+      <input type="date" name="room-date-search" id="room-date-search" />
+      <label for="room-choice">Room Choice</label>
+      <select name="type" id="room-choice">
+        <option value="single-room">Single Room</option>
+        <option value="junior-suite">Junior Suite</option>
+        <option value="residential-suite">Resident Suite</option>
+        <option value="suite">Suite</option>
+      </select>
     </form>
     <h1>Webpack Starter Kit</h1>
 
