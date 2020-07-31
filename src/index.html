@@ -30,10 +30,10 @@
     </form>
     <section alt="Available Rooms" class="available-rooms-section">
       <ul class="available-rooms" id="available-rooms">
-        <li id="room-1">
+        <li id="room-1" class="available-room-card">
           <img src="" alt="Luggage Icon" />
           <p class="room-info"><span id="bed-info">2 twins</span><span id="room-cost">$ 340</span><span id="room-bidet">Bidet ✅</span></p>
-          <button id="room-1-book">Book #1</button>
+          <button id="book-room-1">Book #1</button>
         </li>
       </ul>
     </section>
@@ -47,6 +47,15 @@
       <li id="show-current-customer-info">Current</li>
       <li id="show-add-customer-booking">Add</li>
     </nav>
+    <section class="current-customer-bookings">
+      <ul class="users-bookings" id="user-bookings">
+        <li class="user-booking" id="room-1-booking">
+          Room <span id="booking-room-num">1</span>
+          <button id="remove-booking-1">Remove</button>
+        </li>
+      </ul>
+    </section>
+
     <h1>Webpack Starter Kit</h1>
 
     <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px" />
