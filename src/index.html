@@ -57,7 +57,7 @@
     </section>
     <section class="add-booking-current-customer">
       <form rule="Manager Add Booking" action="" class="mgr-add-booking">
-        <input type="text" name="booking-user-id" id="booking-user-id" />
+        <input type="number" name="booking-user-id" id="booking-user-id" />
         <label for="booking-user-id">User ID</label>
         <input type="date" name="booking-date" id="booking-date" />
         <label for="booking-date">Date</label>
@@ -66,6 +66,14 @@
         <p id="booking-availability-message">Unavailable</p>
         <button type="submit" id="booking-submit-button">Book</button>
       </form>
+    </section>
+    <section class="hotel-stats">
+      <h3>Stats</h3>
+      <p>
+        Total Rooms Available: <span id="rooms-available"> 04</span><br />
+        Capacity: <span id="hotel-capacity">18</span>% <br />
+        Today's Revenue: $<span id="todays-revenue">2000</span>
+      </p>
     </section>
     <h1>Webpack Starter Kit</h1>
 
