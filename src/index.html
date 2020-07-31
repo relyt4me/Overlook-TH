@@ -1,13 +1,79 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Webpack Starter Kit</title>
+    <meta charset="UTF-8" />
+    <title>Overlook</title>
   </head>
   <body>
-    <h1>Webpack Starter Kit</h1>
-
-    <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-
-    <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
+    <header class="header-section">
+      <h1 class="title">Overlook</h1>
+      <p class="address" alt="hotel address">1234 Mountain Street</p>
+      <p class="phone-number" alt="hotel number">555-555-5555</p>
+    </header>
+    <form rule="Login for User" action="" class="login-form">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" />
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" />
+      <button type="submit" class="login-button" id="login-button">Login</button>
+    </form>
+    <form rule="Room Search" action="" class="room-search">
+      <label for="room-date-search">Date</label>
+      <input type="date" name="room-date-search" id="room-date-search" />
+      <label for="room-choice">Room Choice</label>
+      <select name="type" id="room-choice">
+        <option value="single-room">Single Room</option>
+        <option value="junior-suite">Junior Suite</option>
+        <option value="residential-suite">Resident Suite</option>
+        <option value="suite">Suite</option>
+      </select>
+    </form>
+    <section alt="Available Rooms" class="available-rooms-section">
+      <ul class="available-rooms" id="available-rooms">
+        <li id="room-1" class="available-room-card">
+          <img src="" alt="Luggage Icon" />
+          <p class="room-info"><span id="bed-info">2 twins</span><span id="room-cost">$ 340</span><span id="room-bidet">Bidet ✅</span></p>
+          <button id="book-room-1">Book #1</button>
+        </li>
+      </ul>
+    </section>
+    <form rule="Manager Customer Search" action="" class="mgr-customer-search">
+      <label for="customer-name">Customer Name</label>
+      <input type="text" name="customer-name" id="customer-name" />
+      <button type="submit" id="customer-search-btn">Search</button>
+      <p class="searched-customer-name" id="searched-customer-name">Bethany</p>
+    </form>
+    <nav class="manager-customer-interactions" id="manager-customer-interactions">
+      <li id="show-current-customer-info">Current</li>
+      <li id="show-add-customer-booking">Add</li>
+    </nav>
+    <section class="current-customer-bookings">
+      <ul class="users-bookings" id="user-bookings">
+        <li class="user-booking" id="room-1-booking">
+          Room <span id="booking-room-num">1</span>
+          <button id="remove-booking-1">Remove</button>
+        </li>
+      </ul>
+    </section>
+    <section class="add-booking-current-customer">
+      <form rule="Manager Add Booking" action="" class="mgr-add-booking">
+        <input type="number" name="booking-user-id" id="booking-user-id" />
+        <label for="booking-user-id">User ID</label>
+        <input type="date" name="booking-date" id="booking-date" />
+        <label for="booking-date">Date</label>
+        <input type="number" name="booking-room-number" id="booking-room-num" />
+        <label for="booking-room-number">Room Number</label>
+        <p id="booking-availability-message">Unavailable</p>
+        <button type="submit" id="booking-submit-button">Book</button>
+      </form>
+    </section>
+    <section class="hotel-stats">
+      <h3>Stats</h3>
+      <p>
+        Total Rooms Available: <span id="rooms-available"> 04</span><br />
+        Capacity: <span id="hotel-capacity">18</span>% <br />
+        Today's Revenue: $<span id="todays-revenue">2000</span>
+      </p>
+    </section>
   </body>
 </html>
