@@ -1,6 +1,129 @@
+.manager-page {
+  background-image: url('../images/calculator-background.jpg');
+  @include background-image();
+  .header-section {
+    display: none;
+  }
+}
+
+.mgr-customer-search {
+  background-color: $cream-white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    'sname sname'
+    'search btn'
+    'cname cname';
+  row-gap: 3px;
+  column-gap: 3px;
+  justify-items: center;
+  align-items: center;
+  padding: 1vh;
+  height: 13vh;
+  width: 100%;
+  position: fixed;
+  padding-bottom: 6vh;
+  label {
+    grid-area: sname;
+  }
+  input {
+    grid-area: search;
+  }
+  button {
+    grid-area: btn;
+  }
+  p {
+    grid-area: cname;
+  }
+}
+
+.manager-customer-interactions {
+  background-color: $cream-white;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  top: 15vh;
+  height: 5vh;
+  padding: 0;
+  li {
+    text-align: center;
+    width: 50vw;
+  }
+}
+
+.current-customer-bookings {
+  z-index: -1;
+  position: fixed;
+  top: 21vh;
+  margin-top: 5px;
+  .users-bookings {
+    overflow-y: scroll;
+    height: 65vh;
+    padding-left: 0;
+  }
+  .user-booking {
+    @include cards();
+    background-color: $dark-faded;
+  }
+  p {
+    background-color: $cream-white;
+  }
+}
+
+.add-booking-current-customer {
+  background-color: $cream-white;
+  position: fixed;
+  top: 23vh;
+  padding: 2vh;
+  left: calc(23vw - 2vh);
+  border-radius: 2vh;
+}
+.mgr-add-booking {
+  height: 45vh;
+  width: 56vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hotel-stats {
+  background-color: $cream-white;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
 /******* Media *******/
 @media screen and (min-width: 600px) {
+  .manager-page {
+    font-size: 1.75em;
+  }
 }
 
 @media screen and (min-width: 990px) {
+  .manager-page {
+    .mgr-customer-search {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  .manager-customer-interactions {
+    width: 50%;
+    left: 50vw;
+  }
+  .current-customer-bookings {
+    left: 50vw;
+    .user-booking {
+      width: 50vw;
+    }
+  }
+  .add-booking-current-customer {
+    left: 50vw;
+    .mgr-add-booking {
+      width: 50vw;
+    }
+  }
 }
