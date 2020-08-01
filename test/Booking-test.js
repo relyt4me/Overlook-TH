@@ -2,7 +2,7 @@ import chai from 'chai';
 const expect = chai.expect;
 import Booking from '../src/Booking';
 
-describe('Booking', () => {
+describe.only('Booking', () => {
   let booking;
   before(() => {
     booking = new Booking('5fwrgu4i7k55hl6sz', 9, '2020/04/22', 15, 358.4);
