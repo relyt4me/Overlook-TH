@@ -22,8 +22,8 @@
     </section>
     <form rule="Room Search" action="" class="room-search">
       <label for="room-date-search">Date</label>
-      <input type="date" name="room-date-search" id="room-date-search" />
       <label for="room-choice">Room Choice</label>
+      <input type="date" name="room-date-search" id="room-date-search" value="2021-01-01" />
       <select name="type" id="room-choice">
         <option value="single-room">Single Room</option>
         <option value="junior-suite">Junior Suite</option>
@@ -31,6 +31,7 @@
         <option value="suite">Suite</option>
       </select>
       <p>$<span id="total-spent-by-user">450.32</span> spent</p>
+      <button id="view-my-bookings">My Bookings</button>
     </form>
     <section alt="Available Rooms" class="available-rooms-section">
       <ul class="available-rooms" id="available-rooms">

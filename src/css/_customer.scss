@@ -1,6 +1,26 @@
 .customer-page {
   background-image: url('../images/room-background.jpg');
   @include background-image();
+  .header-section {
+    visibility: hidden;
+  }
+  .room-search {
+    background-color: $cream-white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 15vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'lblDate lblChoice'
+      'iptDate iptChoice'
+      'spent btnRes';
+    row-gap: 0.4em;
+    column-gap: 0.4em;
+    font-size: 0.8em;
+    padding: 1vh;
+  }
 }
 
 /******* Media *******/
