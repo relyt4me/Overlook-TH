@@ -5,19 +5,19 @@
     height: 0;
     visibility: hidden;
   }
-  .room-search {
-    width: 98vw;
-    background-color: $cream-white;
-    position: fixed;
-    z-index: 1;
-    height: 15vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 0.4em;
-    column-gap: 0.4em;
-    font-size: 0.8em;
-    padding: 1vw;
-  }
+}
+.room-search {
+  width: 98vw;
+  background-color: $cream-white;
+  position: fixed;
+  z-index: 1;
+  height: 15vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 0.4em;
+  column-gap: 0.4em;
+  font-size: 0.8em;
+  padding: 1vw;
 }
 
 .available-rooms-section {
@@ -65,11 +65,27 @@
         height: 9vh;
       }
     }
-    .room-search {
-      margin-top: 11vh;
-    }
+  }
+  .available-rooms-section {
+    top: 30vh;
+  }
+  .room-search {
+    margin-top: 11vh;
   }
 }
 
 @media screen and (min-width: 990px) {
+  .room-search {
+    width: 40vw;
+  }
+  .available-rooms-section {
+    width: 38vw;
+    left: 60vw;
+    top: 12vh;
+    background-color: rgba(black, 0.3);
+  }
+  .room-card {
+    width: 36vw;
+    background-color: rgba($cream-white, 0.6);
+  }
 }
