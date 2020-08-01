@@ -1,0 +1,86 @@
+.login-page {
+  background-image: url('../images/hotel-background.jpg');
+
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+  .header-section {
+    font-size: 0.5em;
+    text-align: right;
+    position: absolute;
+    left: 64vw;
+    top: 4vh;
+  }
+  img {
+    width: 28vw;
+  }
+}
+.header-section {
+  z-index: 1;
+}
+
+.login-form {
+  width: 36vw;
+  height: 30vh;
+  padding: 2vh;
+  text-align: center;
+  position: absolute;
+  left: calc(50% - 20vw);
+  top: calc(50% - 10vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgba($cream-white, 0.6);
+  border-radius: 2vh;
+}
+
+/******* Media *******/
+@media screen and (min-width: 600px) {
+  .login-form {
+    height: 20vh;
+    width: 25vw;
+    left: calc(80% - 20vw);
+    top: calc(80% - 10vh);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .login-page {
+    .header-section {
+      width: 25vw;
+      left: 73vw;
+      align-items: center;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+    img {
+      width: 12vw;
+    }
+  }
+  .login-form {
+    display: grid;
+    align-items: top;
+    padding-top: 65vh;
+    height: 33vh;
+    width: 27vw;
+    left: calc(73vw - 4vh);
+    top: 0;
+    background-color: $cream-white;
+    border-radius: 0;
+    button,
+    input {
+      height: 2.5em;
+    }
+  }
+}

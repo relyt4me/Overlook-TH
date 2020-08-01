@@ -1,16 +1,15 @@
-body {
-  background-color: red;
+@import './_variable.scss';
+@import './_mixins.scss';
+@import './_login.scss';
+@import './_customer.scss';
+@import './_manager.scss';
+
+* {
+  margin: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/******* Media *******/
-@media screen and (min-width: 600px) {
-  body {
-    background-color: green;
-  }
-}
-
-@media screen and (min-width: 990px) {
-  body {
-    background-color: blue;
-  }
+button,
+input {
+  outline: none;
 }
