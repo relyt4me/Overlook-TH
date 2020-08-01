@@ -68,15 +68,17 @@ describe.only('Customer', () => {
   });
 
   it('should be able to add multiple bookings', () => {
+    customer1.bookings = [];
     customer1.addBooking(firstBooking);
     customer1.addBooking(secondBooking);
     customer1.addBooking(thirdBooking);
 
-    expect(customer1.booking.lenght).to.equal(3);
+    expect(customer1.bookings.length).to.equal(3);
     expect(customer1.bookings).to.eql([firstBooking, secondBooking, thirdBooking]);
   });
 
   it('should be able to sort bookings by date', () => {
+    customer1.bookings = [];
     customer1.addBooking(firstBooking);
     customer1.addBooking(secondBooking);
     customer1.addBooking(thirdBooking);
