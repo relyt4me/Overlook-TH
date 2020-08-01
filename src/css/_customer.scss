@@ -1,3 +1,8 @@
+.customer-page {
+  background-image: url('../images/room-background.jpg');
+  @include background-image();
+}
+
 /******* Media *******/
 @media screen and (min-width: 600px) {
 }

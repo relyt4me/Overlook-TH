@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Overlook</title>
   </head>
-  <body class="login-page">
+  <body class="customer-page">
     <header class="header-section">
       <img src="./images/logo.png" alt="Overlook Hotels Logo" />
       <p class="address" alt="hotel address">1234 Mountain Street</p>
       <p class="phone-number" alt="hotel number">555-555-5555</p>
     </header>
-    <form rule="Login for User" action="" class="login-form">
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username" />
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" />
-      <button type="submit" class="login-button" id="login-button">Login</button>
-    </form>
-    <form rule="Room Search" action="" class="room-search" hidden>
+    <section alt="User Login" hidden>
+      <form rule="Login for User" action="" class="login-form">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" />
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" />
+        <button type="submit" class="login-button" id="login-button">Login</button>
+      </form>
+    </section>
+    <form rule="Room Search" action="" class="room-search">
       <label for="room-date-search">Date</label>
       <input type="date" name="room-date-search" id="room-date-search" />
       <label for="room-choice">Room Choice</label>
@@ -29,7 +31,7 @@
         <option value="suite">Suite</option>
       </select>
     </form>
-    <section alt="Available Rooms" class="available-rooms-section" hidden>
+    <section alt="Available Rooms" class="available-rooms-section">
       <ul class="available-rooms" id="available-rooms">
         <li id="room-1" class="available-room-card">
           <img src="./images/luggage.png" alt="Luggage Icon" />
