@@ -3,7 +3,7 @@ const expect = chai.expect;
 import User from '../src/User';
 import Customer from '../src/Customer';
 
-describe('Customer', () => {
+describe.only('Customer', () => {
   let customer1, firstBooking, secondBooking, thirdBooking;
   before(() => {
     customer1 = new Customer(1, 'Leatha Ullrich');

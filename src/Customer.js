@@ -4,6 +4,7 @@ class Customer extends User {
   constructor(id, name) {
     super(id);
     this.name = name;
+    this.bookings = [];
   }
 }
 
