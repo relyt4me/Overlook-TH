@@ -104,4 +104,26 @@
 }
 
 @media screen and (min-width: 990px) {
+  .manager-page {
+    .mgr-customer-search {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  .manager-customer-interactions {
+    width: 50%;
+    left: 50vw;
+  }
+  .current-customer-bookings {
+    left: 50vw;
+    .user-booking {
+      width: 50vw;
+    }
+  }
+  .add-booking-current-customer {
+    left: 50vw;
+    .mgr-add-booking {
+      width: 50vw;
+    }
+  }
 }

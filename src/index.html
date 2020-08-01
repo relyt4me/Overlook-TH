@@ -91,7 +91,7 @@
 
       <li id="show-add-customer-booking">Add</li>
     </ul>
-    <section class="current-customer-bookings">
+    <section class="current-customer-bookings" hidden>
       <ul class="users-bookings" id="user-bookings">
         <li class="user-booking" id="room-1-booking">
           <p>Room <span id="booking-room-num">1</span> <span id="booking-room-date">2020/03/25</span></p>
@@ -123,14 +123,14 @@
         </li>
       </ul>
     </section>
-    <section class="add-booking-current-customer" hidden>
+    <section class="add-booking-current-customer">
       <form rule="Manager Add Booking" action="" class="mgr-add-booking">
-        <input type="number" name="booking-user-id" id="booking-user-id" />
         <label for="booking-user-id">User ID</label>
-        <input type="date" name="booking-date" id="booking-date" />
+        <input type="number" name="booking-user-id" id="booking-user-id" />
         <label for="booking-date">Date</label>
-        <input type="number" name="booking-room-number" id="booking-room-num" />
+        <input type="date" name="booking-date" id="booking-date" />
         <label for="booking-room-number">Room Number</label>
+        <input type="number" name="booking-room-number" id="booking-room-num" />
         <p id="booking-availability-message">Unavailable</p>
         <button type="submit" id="booking-submit-button">Book</button>
       </form>
