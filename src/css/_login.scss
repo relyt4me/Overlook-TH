@@ -25,6 +25,9 @@
     width: 28vw;
   }
 }
+.header-section {
+  z-index: 1;
+}
 
 .login-form {
   width: 36vw;
@@ -52,4 +55,32 @@
 }
 
 @media screen and (min-width: 990px) {
+  .login-page {
+    .header-section {
+      width: 25vw;
+      left: 73vw;
+      align-items: center;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+    img {
+      width: 12vw;
+    }
+  }
+  .login-form {
+    display: grid;
+    align-items: top;
+    padding-top: 65vh;
+    height: 33vh;
+    width: 27vw;
+    left: calc(73vw - 4vh);
+    top: 0;
+    background-color: $cream-white;
+    border-radius: 0;
+    button,
+    input {
+      height: 2.5em;
+    }
+  }
 }
