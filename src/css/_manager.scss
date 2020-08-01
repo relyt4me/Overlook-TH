@@ -1,4 +1,6 @@
 .manager-page {
+  background-image: url('../images/calculator-background.jpg');
+  @include background-image();
   .header-section {
     display: none;
   }
