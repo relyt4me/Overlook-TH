@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Overlook</title>
   </head>
-  <body class="manager-page">
+  <body class="customer-page">
     <header class="header-section">
       <img src="./images/logo.png" alt="Overlook Hotels Logo" />
       <p class="address" alt="hotel address">1234 Mountain Street</p>
       <p class="phone-number" alt="hotel number">555-555-5555</p>
     </header>
-    <section alt="User Login" id="login-form" hidden>
+    <section alt="User Login lgn-item" id="login-form" hidden>
       <form rule="Login for User" action="" class="login-form">
         <label for="username">Username</label>
         <input type="text" name="username" id="username" />
@@ -20,7 +20,7 @@
         <button type="submit" class="login-button" id="login-button">Login</button>
       </form>
     </section>
-    <section alt="Customer Navigation" id="room-search-form" hidden>
+    <section alt="Customer Navigation cst-item" id="room-search-form">
       <form rule="Room Search" action="" class="room-search">
         <label for="room-date-search">Date</label>
         <label for="room-choice">Room Choice</label>
@@ -35,50 +35,20 @@
         <button id="view-my-bookings">My Bookings</button>
       </form>
     </section>
-    <section alt="Available Rooms" class="available-rooms-section" hidden>
+    <section alt="Available Rooms" class="available-rooms-section cst-item">
       <ul class="available-rooms" id="available-rooms">
         <li id="room-1" class="room-card">
           <img src="./images/luggage.png" alt="Luggage Icon" />
           <p class="room-info"><span id="bed-info">2 twins</span> <span id="room-cost">$340</span> <span id="room-bidet">Bidet ✅</span></p>
           <button id="book-room-1">Book #1</button>
         </li>
-        <li id="room-1" class="room-card">
+        <li id="room-2" class="room-card">
           <img src="./images/luggage.png" alt="Luggage Icon" />
           <p class="room-info">Booked Room #1 for 2020/01/28</p>
         </li>
-        <li id="room-1" class="room-card">
-          <img src="./images/luggage.png" alt="Luggage Icon" />
-          <p class="room-info"><span id="bed-info">2 twins</span> <span id="room-cost">$340</span> <span id="room-bidet">Bidet ✅</span></p>
-          <button id="book-room-1">Book #1</button>
-        </li>
-        <li id="room-1" class="room-card">
-          <img src="./images/luggage.png" alt="Luggage Icon" />
-          <p class="room-info">Booked for 2020/01/28</p>
-          <button id="booked-room-1">#1</button>
-        </li>
-        <li id="room-1" class="room-card">
-          <img src="./images/luggage.png" alt="Luggage Icon" />
-          <p class="room-info"><span id="bed-info">2 twins</span> <span id="room-cost">$340</span> <span id="room-bidet">Bidet ✅</span></p>
-          <button id="book-room-1">Book #1</button>
-        </li>
-        <li id="room-1" class="room-card">
-          <img src="./images/luggage.png" alt="Luggage Icon" />
-          <p class="room-info">Booked for 2020/01/28</p>
-          <button id="booked-room-1">#1</button>
-        </li>
-        <li id="room-1" class="room-card">
-          <img src="./images/luggage.png" alt="Luggage Icon" />
-          <p class="room-info"><span id="bed-info">2 twins</span> <span id="room-cost">$340</span> <span id="room-bidet">Bidet ✅</span></p>
-          <button id="book-room-1">Book #1</button>
-        </li>
-        <li id="room-1" class="room-card">
-          <img src="./images/luggage.png" alt="Luggage Icon" />
-          <p class="room-info">Booked for 2020/01/28</p>
-          <button id="booked-room-1">#1</button>
-        </li>
       </ul>
     </section>
-    <section alt="Manager Search Navigation" id="mgr-search-section">
+    <section alt="Manager Search Navigation mgr-item" id="mgr-search-section" hidden>
       <form rule="Manager Customer Search" action="" class="mgr-customer-search">
         <label for="customer-name">Customer Name</label>
         <input type="text" name="customer-name" id="customer-name" />
@@ -86,44 +56,21 @@
         <p class="searched-customer-name" id="searched-customer-name">Bethany $334.33 spent</p>
       </form>
     </section>
-    <ul class="manager-customer-interactions" id="manager-customer-interactions">
-      <li id="show-current-customer-info">Current</li>
-
-      <li id="show-add-customer-booking">Add</li>
-    </ul>
-    <section class="current-customer-bookings" hidden>
+    <section class="mgr-item" hidden>
+      <ul class="manager-customer-interactions" id="manager-customer-interactions">
+        <li tabindex="0" id="show-current-customer-info">Current</li>
+        <li tabindex="0" id="show-add-customer-booking">Add</li>
+      </ul>
+    </section>
+    <section class="current-customer-bookings mgr-item" id="mgr-current-section" hidden>
       <ul class="users-bookings" id="user-bookings">
-        <li class="user-booking" id="room-1-booking">
-          <p>Room <span id="booking-room-num">1</span> <span id="booking-room-date">2020/03/25</span></p>
-          <button id="remove-booking-1">Remove</button>
-        </li>
-        <li class="user-booking" id="room-1-booking">
-          <p>Room <span id="booking-room-num">1</span> <span id="booking-room-date">2020/03/25</span></p>
-          <button id="remove-booking-1">Remove</button>
-        </li>
-        <li class="user-booking" id="room-1-booking">
-          <p>Room <span id="booking-room-num">1</span> <span id="booking-room-date">2020/03/25</span></p>
-          <button id="remove-booking-1">Remove</button>
-        </li>
-        <li class="user-booking" id="room-1-booking">
-          <p>Room <span id="booking-room-num">1</span> <span id="booking-room-date">2020/03/25</span></p>
-          <button id="remove-booking-1">Remove</button>
-        </li>
-        <li class="user-booking" id="room-1-booking">
-          <p>Room <span id="booking-room-num">1</span> <span id="booking-room-date">2020/03/25</span></p>
-          <button id="remove-booking-1">Remove</button>
-        </li>
-        <li class="user-booking" id="room-1-booking">
-          <p>Room <span id="booking-room-num">1</span> <span id="booking-room-date">2020/03/25</span></p>
-          <button id="remove-booking-1">Remove</button>
-        </li>
         <li class="user-booking" id="room-1-booking">
           <p>Room <span id="booking-room-num">1</span> <span id="booking-room-date">2020/03/25</span></p>
           <button id="remove-booking-1">Remove</button>
         </li>
       </ul>
     </section>
-    <section class="add-booking-current-customer">
+    <section class="add-booking-current-customer mgr-item" id="mgr-add-section" hidden>
       <form rule="Manager Add Booking" action="" class="mgr-add-booking">
         <label for="booking-user-id">User ID</label>
         <input type="number" name="booking-user-id" id="booking-user-id" />
@@ -135,7 +82,7 @@
         <button type="submit" id="booking-submit-button">Book</button>
       </form>
     </section>
-    <section class="hotel-stats">
+    <section class="hotel-stats mgr-item" hidden>
       <h3>Stats</h3>
       <p>
         Total Rooms Available: <span id="rooms-available"> 04</span><br />
