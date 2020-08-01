@@ -6,13 +6,13 @@ chai.use(spies);
 
 describe('fetchData', () => {
   beforeEach(() => {
-    global.fetch = (url) => {
+    global.fetch = () => {
       return Promise;
     };
-    Promise.then = (callbackFunction) => {
+    Promise.then = () => {
       return Promise;
     };
-    Promise.catch = (callbackFunction) => {
+    Promise.catch = () => {
       return Promise;
     };
     chai.spy.on(global, ['fetch']);
