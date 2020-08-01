@@ -42,6 +42,18 @@
   }
 }
 
+.current-customer-bookings {
+  margin-top: 5px;
+  .users-bookings {
+    padding-left: 0;
+    overflow-y: scroll;
+  }
+  .user-booking {
+    @include cards();
+    background-color: $dark-faded;
+  }
+}
+
 /******* Media *******/
 @media screen and (min-width: 600px) {
 }

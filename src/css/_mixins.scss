@@ -13,3 +13,12 @@
      on the container's size */
   background-size: cover;
 }
+
+@mixin cards() {
+  width: 100vw;
+  height: 12vh;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
