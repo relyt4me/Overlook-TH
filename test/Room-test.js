@@ -2,7 +2,7 @@ import chai from 'chai';
 const expect = chai.expect;
 import Room from '../src/Room';
 
-describe('Room', () => {
+describe.only('Room', () => {
   let room;
   before(() => {
     room = new Room(4, 'single room', false, 'queen', 1, 429.44);
