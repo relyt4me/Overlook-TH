@@ -54,6 +54,15 @@
   }
 }
 
+.hotel-stats {
+  background-color: $cream-white;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
 /******* Media *******/
 @media screen and (min-width: 600px) {
 }
