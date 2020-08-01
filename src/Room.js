@@ -1,7 +1,9 @@
 class Room {
-  constructor(roomNumber, roomType) {
+  constructor(roomNumber, roomType, hasBidet, bedSize) {
     this.number = roomNumber;
     this.roomType = roomType;
+    this.hasBidet = hasBidet;
+    this.bedSize = bedSize;
   }
 }
 
