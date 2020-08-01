@@ -2,24 +2,48 @@
   background-image: url('../images/room-background.jpg');
   @include background-image();
   .header-section {
+    height: 0;
     visibility: hidden;
   }
   .room-search {
+    width: 98vw;
     background-color: $cream-white;
-    position: absolute;
-    left: 0;
-    top: 0;
+    position: fixed;
+    z-index: 1;
     height: 15vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      'lblDate lblChoice'
-      'iptDate iptChoice'
-      'spent btnRes';
     row-gap: 0.4em;
     column-gap: 0.4em;
     font-size: 0.8em;
-    padding: 1vh;
+    padding: 1vw;
+  }
+}
+
+.available-rooms-section {
+  position: absolute;
+  left: 0;
+  top: 17vh;
+  .available-rooms {
+    overflow-y: scroll;
+    padding: 0;
+  }
+  img {
+    height: 8vh;
+  }
+}
+.room-card {
+  width: 100vw;
+  height: 12vh;
+  background-color: rgba($cream-white, 0.4);
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .room-info {
+    padding: 3px;
+    border-radius: 3px;
+    background-color: rgba($cream-white, 0.8);
   }
 }
 
