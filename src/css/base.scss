@@ -1,16 +1,1 @@
-body {
-  background-color: red;
-}
 
-/******* Media *******/
-@media screen and (min-width: 600px) {
-  body {
-    background-color: green;
-  }
-}
-
-@media screen and (min-width: 990px) {
-  body {
-    background-color: blue;
-  }
-}
