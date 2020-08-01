@@ -18,6 +18,9 @@
   column-gap: 3px;
   justify-items: center;
   padding: 1vh;
+  height: 13vh;
+  position: fixed;
+  padding-bottom: 6vh;
   label {
     grid-area: sname;
   }
@@ -36,6 +39,9 @@
   background-color: $cream-white;
   display: flex;
   justify-content: space-around;
+  position: sticky;
+  top: 15vh;
+  height: 5vh;
   li {
     text-align: center;
     width: 50vw;
@@ -43,14 +49,21 @@
 }
 
 .current-customer-bookings {
+  z-index: -1;
+  position: fixed;
+  top: 21vh;
   margin-top: 5px;
   .users-bookings {
-    padding-left: 0;
     overflow-y: scroll;
+    height: 65vh;
+    padding-left: 0;
   }
   .user-booking {
     @include cards();
     background-color: $dark-faded;
+  }
+  p {
+    background-color: $cream-white;
   }
 }
 
