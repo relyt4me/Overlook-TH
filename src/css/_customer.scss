@@ -49,6 +49,26 @@
 
 /******* Media *******/
 @media screen and (min-width: 600px) {
+  .customer-page {
+    .header-section {
+      position: fixed;
+      width: 100vw;
+      visibility: visible;
+      height: 11vh;
+      background-color: $cream-white;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-around;
+      align-items: center;
+
+      img {
+        height: 9vh;
+      }
+    }
+    .room-search {
+      margin-top: 11vh;
+    }
+  }
 }
 
 @media screen and (min-width: 990px) {
