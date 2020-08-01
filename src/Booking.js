@@ -1,5 +1,7 @@
 class Booking {
-  constructor() {}
+  constructor(id) {
+    this.id = id;
+  }
 }
 
 export default Booking;
