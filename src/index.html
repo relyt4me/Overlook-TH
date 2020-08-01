@@ -2,6 +2,7 @@
 <html lang="en-US">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Overlook</title>
   </head>
   <body>
@@ -17,7 +18,7 @@
       <input type="password" name="password" id="password" />
       <button type="submit" class="login-button" id="login-button">Login</button>
     </form>
-    <form rule="Room Search" action="" class="room-search">
+    <form rule="Room Search" action="" class="room-search" hidden>
       <label for="room-date-search">Date</label>
       <input type="date" name="room-date-search" id="room-date-search" />
       <label for="room-choice">Room Choice</label>
@@ -28,7 +29,7 @@
         <option value="suite">Suite</option>
       </select>
     </form>
-    <section alt="Available Rooms" class="available-rooms-section">
+    <section alt="Available Rooms" class="available-rooms-section" hidden>
       <ul class="available-rooms" id="available-rooms">
         <li id="room-1" class="available-room-card">
           <img src="./images/luggage.png" alt="Luggage Icon" />
@@ -37,17 +38,17 @@
         </li>
       </ul>
     </section>
-    <form rule="Manager Customer Search" action="" class="mgr-customer-search">
+    <form rule="Manager Customer Search" action="" class="mgr-customer-search" hidden>
       <label for="customer-name">Customer Name</label>
       <input type="text" name="customer-name" id="customer-name" />
       <button type="submit" id="customer-search-btn">Search</button>
       <p class="searched-customer-name" id="searched-customer-name">Bethany</p>
     </form>
-    <nav class="manager-customer-interactions" id="manager-customer-interactions">
+    <nav class="manager-customer-interactions" id="manager-customer-interactions" hidden>
       <li id="show-current-customer-info">Current</li>
       <li id="show-add-customer-booking">Add</li>
     </nav>
-    <section class="current-customer-bookings">
+    <section class="current-customer-bookings" hidden>
       <ul class="users-bookings" id="user-bookings">
         <li class="user-booking" id="room-1-booking">
           Room <span id="booking-room-num">1</span>
@@ -55,7 +56,7 @@
         </li>
       </ul>
     </section>
-    <section class="add-booking-current-customer">
+    <section class="add-booking-current-customer" hidden>
       <form rule="Manager Add Booking" action="" class="mgr-add-booking">
         <input type="number" name="booking-user-id" id="booking-user-id" />
         <label for="booking-user-id">User ID</label>
@@ -67,7 +68,7 @@
         <button type="submit" id="booking-submit-button">Book</button>
       </form>
     </section>
-    <section class="hotel-stats">
+    <section class="hotel-stats" hidden>
       <h3>Stats</h3>
       <p>
         Total Rooms Available: <span id="rooms-available"> 04</span><br />
