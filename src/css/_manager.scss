@@ -1,3 +1,35 @@
+.manager-page {
+  .header-section {
+    display: none;
+  }
+}
+
+.mgr-customer-search {
+  background-color: $cream-white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    'sname sname'
+    'search btn'
+    'cname cname';
+  row-gap: 3px;
+  column-gap: 3px;
+  justify-items: center;
+  padding: 1vh;
+  label {
+    grid-area: sname;
+  }
+  input {
+    grid-area: search;
+  }
+  button {
+    grid-area: btn;
+  }
+  p {
+    grid-area: cname;
+  }
+}
+
 /******* Media *******/
 @media screen and (min-width: 600px) {
 }
