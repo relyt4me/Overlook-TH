@@ -17,6 +17,7 @@
   row-gap: 3px;
   column-gap: 3px;
   justify-items: center;
+  align-items: center;
   padding: 1vh;
   height: 13vh;
   width: 100%;
@@ -97,6 +98,9 @@
 
 /******* Media *******/
 @media screen and (min-width: 600px) {
+  .manager-page {
+    font-size: 1.75em;
+  }
 }
 
 @media screen and (min-width: 990px) {
