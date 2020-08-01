@@ -43,6 +43,12 @@
 
 /******* Media *******/
 @media screen and (min-width: 600px) {
+  .login-form {
+    height: 20vh;
+    width: 25vw;
+    left: calc(80% - 20vw);
+    top: calc(80% - 10vh);
+  }
 }
 
 @media screen and (min-width: 990px) {

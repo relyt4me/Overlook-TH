@@ -3,3 +3,12 @@
 @import './_login.scss';
 @import './_customer.scss';
 @import './_manager.scss';
+
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button,
+input {
+  outline: none;
+}
