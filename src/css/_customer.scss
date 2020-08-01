@@ -1,6 +1,91 @@
-/******* Media *******/
-@media screen and (min-width: 600px) {
+.customer-page {
+  background-image: url('../images/room-background.jpg');
+  @include background-image();
+  .header-section {
+    height: 0;
+    visibility: hidden;
+  }
+}
+.room-search {
+  width: 98vw;
+  background-color: $cream-white;
+  position: fixed;
+  z-index: 1;
+  height: 15vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 0.4em;
+  column-gap: 0.4em;
+  font-size: 0.8em;
+  padding: 1vw;
 }
 
-@media screen and (min-width: 990px) {
+.available-rooms-section {
+  position: absolute;
+  left: 0;
+  top: 17vh;
+  .available-rooms {
+    overflow-y: scroll;
+    padding: 0;
+  }
+  img {
+    height: 8vh;
+  }
+}
+.room-card {
+  width: 100vw;
+  height: 12vh;
+  background-color: rgba($cream-white, 0.4);
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .room-info {
+    padding: 3px;
+    border-radius: 3px;
+    background-color: rgba($cream-white, 0.8);
+  }
+}
+
+/******* Media *******/
+@media screen and (min-width: 600px) {
+  .customer-page {
+    .header-section {
+      position: fixed;
+      width: 100vw;
+      visibility: visible;
+      height: 11vh;
+      background-color: $cream-white;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-around;
+      align-items: center;
+
+      img {
+        height: 9vh;
+      }
+    }
+  }
+  .available-rooms-section {
+    top: 30vh;
+  }
+  .room-search {
+    margin-top: 11vh;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .room-search {
+    width: 40vw;
+  }
+  .available-rooms-section {
+    width: 38vw;
+    left: 60vw;
+    top: 12vh;
+    background-color: rgba(black, 0.3);
+  }
+  .room-card {
+    width: 36vw;
+    background-color: rgba($cream-white, 0.6);
+  }
 }
