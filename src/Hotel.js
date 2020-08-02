@@ -36,6 +36,11 @@ class Hotel {
       return booking.date === date;
     });
   }
+
+  getPercentOccupied(date) {
+    let fractionOfRooms = this.getAvailableRooms(date).length / this.rooms.length;
+    return 100 - parseInt(fractionOfRooms * 100);
+  }
 }
 
 export default Hotel;
