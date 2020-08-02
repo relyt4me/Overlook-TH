@@ -58,4 +58,12 @@ describe('UserRepo', () => {
 
     expect(userRepo.findCustomer(2)).to.eql(myCustomer);
   });
+
+  it('should be able to find a customers ID by a given username', () => {
+    expect(userRepo.getCustomerID('customer2')).to.equal(2);
+  });
+
+  it('should return undefined if that customer username does not exist', () => {
+    expect(userRepo.getCustomerID('customer12')).to.eql(undefined);
+  });
 });
