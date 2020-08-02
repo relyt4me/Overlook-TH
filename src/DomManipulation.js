@@ -2,9 +2,9 @@ class DomUManipulation {
   changeInnerTextID(id, text) {
     document.getElementById(id).innerText = text;
   }
-  // changeClassList(id, classes) {
-  //   document.getElementById(id).classList = '';
-  // }
+  changeClassList(id, classes) {
+    document.getElementById(id).classList = '';
+  }
   // addActivityHTML(activityRepo, id, user, dataType) {
   //   const innerHTML = `<p>streak on: ${activityRepo.getStreak(user.id, dataType)}</p>`;
   //   document.getElementById(id).insertAdjacentHTML('afterEnd', innerHTML);
