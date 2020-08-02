@@ -64,6 +64,10 @@ describe('Hotel', () => {
     expect(hotel.getAvailableRooms('2020/08/04')).to.eql([room1, room2, room3]);
   });
 
+  it('should get available rooms of a certain type by date', () => {
+    expect(hotel.getAvailableRoomTypeAndDate('1999/07/15', 'suite')).to.eql([room1, room3]);
+  });
+
   it('should get a percent of room occupied for a date', () => {
     expect(hotel.getPercentOccupied('2020/04/22')).to.equal(67);
     expect(hotel.getPercentOccupied('2020/02/16')).to.equal(34);

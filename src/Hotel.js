@@ -31,6 +31,13 @@ class Hotel {
     });
   }
 
+  getAvailableRoomTypeAndDate(date, type) {
+    let availableRoomOnDate = this.getAvailableRooms(date);
+    return availableRoomOnDate.filter((room) => {
+      return room.roomType === type;
+    });
+  }
+
   bookingsOnDay(date) {
     return this.bookings.filter((booking) => {
       return booking.date === date;
