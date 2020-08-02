@@ -19,10 +19,22 @@ class Hotel {
   }
 
   getRevenueForDay(date) {
-    let bookingsOnDay = this.bookings.filter((booking) => {
+    return this.getBookingsTotalCost(this.bookingsOnDay(date));
+  }
+
+  getAvailableRooms(date) {
+    let daysBookingsRoomNums = this.bookingsOnDay(date).map((booking) => {
+      return booking.roomNumber;
+    });
+    return this.rooms.filter((room) => {
+      return !daysBookingsRoomNums.includes(room.number);
+    });
+  }
+
+  bookingsOnDay(date) {
+    return this.bookings.filter((booking) => {
       return booking.date === date;
     });
-    return this.getBookingsTotalCost(bookingsOnDay);
   }
 }
 
