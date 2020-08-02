@@ -65,9 +65,12 @@ describe('DomUpdates', () => {
 
     expect(listOfSections[0].hidden).to.equal(true);
   });
-  // it('should call getElementById each time changeInnerTextID is called in XXXX') {
 
-  // }
+  it('should call getElementById each time changeInnerTextID is called in renderCustomerPage', () => {
+    domUpdater.renderCustomerPage();
+
+    expect(document.getElementById).to.be.called(1);
+  });
 
   // it('should call getElementById each time changeInnerTextID is called in XXXX') {
 

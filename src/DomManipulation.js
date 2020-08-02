@@ -12,6 +12,10 @@ class DomUManipulation {
       section.hidden = isShown;
     });
   }
+
+  renderCustomerPage(customer) {
+    this.changeClassList('full-body', 'customer-page');
+  }
   // addActivityHTML(activityRepo, id, user, dataType) {
   //   const innerHTML = `<p>streak on: ${activityRepo.getStreak(user.id, dataType)}</p>`;
   //   document.getElementById(id).insertAdjacentHTML('afterEnd', innerHTML);

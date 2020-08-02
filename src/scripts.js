@@ -91,6 +91,7 @@ function loginManager() {
 function loginCustomer(id) {
   //some dom updates
   currentUser = data.customerRepo.findCustomer(id);
+  dom.renderCustomerPage(currentUser);
   console.log(currentUser);
 }
 
