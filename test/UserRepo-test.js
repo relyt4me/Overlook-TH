@@ -39,7 +39,7 @@ describe.only('UserRepo', () => {
   });
 
   it('should instatiate users from dataset', () => {
-    const instatiatedCustomers = userRepo.makeUsers();
+    const instatiatedCustomers = userRepo.makeUsers(userData);
     expect(instatiatedCustomers[0]).to.be.an.instanceOf(Customer);
   });
 
@@ -48,13 +48,13 @@ describe.only('UserRepo', () => {
   });
 
   it('should have each customer be instantiated from the userData passed in', () => {
-    const myCustomer = new Customer();
+    const myCustomer = new Customer(1, 'Leatha Ullrich');
 
     expect(userRepo.customers[0]).to.eql(myCustomer);
   });
 
   it('should be able to find a customer', () => {
-    const myCustomer = new Customer();
+    const myCustomer = new Customer(2, 'Rocio Schuster');
 
     expect(userRepo.findCustomer(2)).to.eql(myCustomer);
   });
