@@ -5,7 +5,7 @@ import Manager from '../src/Manager';
 const spies = require('chai-spies');
 chai.use(spies);
 
-describe('Customer', () => {
+describe('Manager', () => {
   let manager;
   before(() => {
     manager = new Manager();
@@ -41,19 +41,17 @@ describe('Customer', () => {
   });
 
   // Spies test to implement later
-  it('should be able to create a booking', () => {});
+  // it('should be able to create a booking', () => {});
 
-  it('should call fetch once when posting a booking', () => {});
+  // it('should call fetch once when posting a booking', () => {});
 
-  it('should call then twice when posting a booking', () => {});
+  // it('should use the correct parameters when posting a booking', () => {});
 
-  it('should use the correct parameters when posting a booking', () => {});
+  // it('should be able to remove a booking', () => {});
 
-  it('should be able to remove a booking', () => {});
+  // it('should call fetch once when removing a booking', () => {});
 
-  it('should call fetch once when removing a booking', () => {});
+  // it('should call then twice when removing a booking', () => {});
 
-  it('should call then twice when removing a booking', () => {});
-
-  it('should use the correct parameters when removing a booking', () => {});
+  // it('should use the correct parameters when removing a booking', () => {});
 });
