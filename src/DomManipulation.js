@@ -6,15 +6,18 @@ class DomUManipulation {
     document.getElementById(id).className = classes;
   }
 
-  viewSections(className, isShown) {
+  viewSections(className, isHidden) {
     const allOfSection = document.querySelectorAll(className);
     allOfSection.forEach((section) => {
-      section.hidden = isShown;
+      section.hidden = isHidden;
     });
   }
 
   renderCustomerPage(customer) {
     this.changeClassList('full-body', 'customer-page');
+    this.viewSections('.lgn-item', true);
+    this.viewSections('.cst-item', false);
+    this.viewSections('.mgr-item', true);
   }
   // addActivityHTML(activityRepo, id, user, dataType) {
   //   const innerHTML = `<p>streak on: ${activityRepo.getStreak(user.id, dataType)}</p>`;

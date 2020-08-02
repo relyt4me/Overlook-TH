@@ -72,6 +72,12 @@ describe('DomUpdates', () => {
     expect(document.getElementById).to.be.called(1);
   });
 
+  it('should call querySelectorAll each time changeInnerTextID is called in renderCustomerPage', () => {
+    domUpdater.renderCustomerPage();
+
+    expect(document.querySelectorAll).to.be.called(3);
+  });
+
   // it('should call getElementById each time changeInnerTextID is called in XXXX') {
 
   // }
