@@ -48,7 +48,11 @@ describe.only('DomUpdates', () => {
     expect(document.getElementById).to.have.been.called.with('full-body');
   });
 
-  it('should be able to change the classList of the element', ())
+  it('should be able to change the classList of the element', () => {
+    domUpdater.changeClassList('full-body', 'HELLO');
+
+    expect(myElement.className).to.equal('HELLO');
+  });
 
   it('should call querySelectorAll with the correct arguments in viewSections', () => {
     domUpdater.viewSections('.cst-item', true);
