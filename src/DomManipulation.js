@@ -1,7 +1,7 @@
 class DomUManipulation {
-  // changeInnerTextID(id, text) {
-  //   document.getElementById(id).innerText = text;
-  // }
+  changeInnerTextID(id, text) {
+    document.getElementById(id).innerText = text;
+  }
   // changeClassList(id, classes) {
   //   document.getElementById(id).classList = '';
   // }

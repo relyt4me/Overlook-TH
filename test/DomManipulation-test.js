@@ -4,7 +4,7 @@ import DomManipulation from '../src/DomManipulation';
 const spies = require('chai-spies');
 chai.use(spies);
 
-describe('DomUpdates', () => {
+describe.only('DomUpdates', () => {
   let domUpdater;
 
   before(() => {});
@@ -32,7 +32,7 @@ describe('DomUpdates', () => {
   });
 
   it('should call getElementByID with the correct arguments in changeClassList', () => {
-    domUpdater.changeInnerTextID('full-body', 'HELLO');
+    domUpdater.changeClassList('full-body', 'HELLO');
 
     expect(document.getElementById).to.have.been.called.with('full-body');
   });
