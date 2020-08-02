@@ -40,9 +40,9 @@ describe.only('Hotel', () => {
   });
 
   it('should tell you if a room is available', () => {
-    expect(hotel.isRoomAvailable('2020/01/24', 3)).to.equal(true);
+    expect(hotel.isRoomAvailable('2020/01/24', 4)).to.equal(true);
     expect(hotel.isRoomAvailable('2020/04/25', 1)).to.equal(true);
-    expect(hotel.isRoomAvailable('2020/01/28', 3)).to.equal(true);
+    expect(hotel.isRoomAvailable('2020/01/28', 4)).to.equal(true);
   });
 
   it('should tell you if a room is not available', () => {
