@@ -18,7 +18,9 @@ function startApp() {
       data.customerRepo = new UserRepo(allData.usersData);
       data.hotel = instantiateHotel(allData.roomsData, allData.bookingsData);
     })
-    .then(() => {})
+    .then(() => {
+      console.log(data.customerRepo.findCustomer(70));
+    })
     .catch((err) => console.log(err.message));
 }
 
@@ -46,6 +48,9 @@ function loginClicked(event) {
   const enteredPassword = document.getElementById('password').value;
   if (enteredUsername === 'manager') {
     enteredPassword === data.hotel.manager.password ? loginManager() : incorrectLogin();
+  } else {
+    let customersID = data.customerRepo.getCustomerID();
+    customersID ? loginUser(data.customerRepo.findCustomer(customersID)) : incorrectLogin();
   }
 }
 
