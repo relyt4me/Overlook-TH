@@ -76,15 +76,4 @@ describe('Customer', () => {
     expect(customer1.bookings.length).to.equal(3);
     expect(customer1.bookings).to.eql([firstBooking, secondBooking, thirdBooking]);
   });
-
-  it('should be able to sort bookings by date', () => {
-    customer1.bookings = [];
-    customer1.addBooking(firstBooking);
-    customer1.addBooking(secondBooking);
-    customer1.addBooking(thirdBooking);
-
-    const sortedBookings = customer1.getSortedBookings();
-
-    expect(sortedBookings).to.eql([secondBooking, thirdBooking, firstBooking]);
-  });
 });

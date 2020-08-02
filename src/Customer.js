@@ -10,14 +10,6 @@ class Customer extends User {
   addBooking(booking) {
     this.bookings.push(booking);
   }
-
-  getSortedBookings() {
-    return this.bookings.sort((bookingA, bookingB) => {
-      let dateA = parseInt(bookingA.date.split('/').join(''));
-      let dateB = parseInt(bookingB.date.split('/').join(''));
-      return dateA - dateB;
-    });
-  }
 }
 
 export default Customer;

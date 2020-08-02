@@ -28,13 +28,22 @@ class DomUManipulation {
   }
 
   bookingsAsList(bookings) {
-    const listOfBookings = bookings.map((booking) => {
+    const sortedBookings = this.getSortedBookings(bookings);
+    const listOfBookings = sortedBookings.map((booking) => {
       return `<li id="${booking.id}" class="room-card">
           <img src="./images/luggage.png" alt="Luggage Icon" />
           <p class="room-info">Booked Room #${booking.roomNumber} for ${booking.date}</p>
         </li>`;
     });
     return listOfBookings.join('');
+  }
+
+  getSortedBookings(bookings) {
+    return bookings.sort((bookingA, bookingB) => {
+      let dateA = parseInt(bookingA.date.split('/').join(''));
+      let dateB = parseInt(bookingB.date.split('/').join(''));
+      return dateB - dateA;
+    });
   }
 }
 
