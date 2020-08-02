@@ -1,5 +1,7 @@
 import fetchData from './fetchAllData';
 import UserRepo from './UserRepo';
+import Manager from './Manager'
+import Room from './Room'
 
 const data = {
   customerRepo: null,
@@ -15,4 +17,12 @@ function startApp() {
     })
     .then(() => {})
     .catch((err) => console.log(err.message));
+}
+
+instantiateManager() {
+  return new Manager();
+}
+
+instantiateRooms() {
+
 }
