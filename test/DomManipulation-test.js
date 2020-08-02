@@ -18,7 +18,7 @@ describe.only('DomUpdates', () => {
       return myElement;
     });
     chai.spy.on(document, ['querySelectorAll'], () => {
-      return [{ hidden: false }];
+      return listOfSections;
     });
   });
 
@@ -58,6 +58,12 @@ describe.only('DomUpdates', () => {
     domUpdater.viewSections('.cst-item', true);
 
     expect(document.querySelectorAll).to.have.been.called.with('.cst-item');
+  });
+
+  it('should be able to hide all of the elements with viewSection', () => {
+    domUpdater.viewSections('full-body', true);
+
+    expect(listOfSections[0].hidden).to.equal(true);
   });
   // it('should call getElementById each time changeInnerTextID is called in XXXX') {
 
