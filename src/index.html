@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Overlook</title>
   </head>
-  <body class="customer-page" id="full-body">
+  <body class="login-page" id="full-body">
     <header class="header-section">
       <img src="./images/logo.png" alt="Overlook Hotels Logo" />
       <p class="address" alt="hotel address">1234 Mountain Street</p>
       <p class="phone-number" alt="hotel number">555-555-5555</p>
     </header>
-    <section alt="User Login lgn-item" id="login-form" hidden>
+    <section alt="User Login lgn-item" id="login-form">
       <form rule="Login for User" action="" class="login-form">
         <label for="username">Username</label>
         <input type="text" name="username" id="username" />
@@ -20,7 +20,7 @@
         <button type="submit" class="login-button" id="login-button">Login</button>
       </form>
     </section>
-    <section alt="Customer Navigation cst-item" id="room-search-form">
+    <section alt="Customer Navigation cst-item" id="room-search-form" hidden>
       <form rule="Room Search" action="" class="room-search">
         <label for="room-date-search">Date</label>
         <label for="room-choice">Room Choice</label>
@@ -35,7 +35,7 @@
         <button id="view-my-bookings">My Bookings</button>
       </form>
     </section>
-    <section alt="Available Rooms" class="available-rooms-section cst-item">
+    <section alt="Available Rooms" class="available-rooms-section cst-item" hidden>
       <ul class="available-rooms" id="available-rooms">
         <li id="room-1" class="room-card">
           <img src="./images/luggage.png" alt="Luggage Icon" />

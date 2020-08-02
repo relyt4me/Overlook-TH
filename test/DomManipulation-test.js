@@ -4,7 +4,7 @@ import DomManipulation from '../src/DomManipulation';
 const spies = require('chai-spies');
 chai.use(spies);
 
-describe.only('DomUpdates', () => {
+describe('DomUpdates', () => {
   let domUpdater, myElement, listOfSections;
 
   before(() => {});
