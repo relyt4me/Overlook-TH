@@ -32,7 +32,7 @@ describe.only('Hotel', () => {
   });
 
   it('should have bookings', () => {
-    expect(hotel.bookings).to.eql([booking1, booking2, booking3]);
+    expect(hotel.bookings).to.eql([booking1, booking2, booking3, booking4, booking5]);
   });
 
   it('should have a manager', () => {
