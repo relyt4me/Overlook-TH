@@ -41,6 +41,10 @@ class Hotel {
     let fractionOfRooms = this.getAvailableRooms(date).length / this.rooms.length;
     return 100 - parseInt(fractionOfRooms * 100);
   }
+
+  updateBookings(bookings) {
+    this.bookings = bookings;
+  }
 }
 
 export default Hotel;
