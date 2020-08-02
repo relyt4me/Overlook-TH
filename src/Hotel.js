@@ -17,6 +17,13 @@ class Hotel {
       return totalCost + bookingRoom.costPerNight;
     }, 0);
   }
+
+  getRevenueForDay(date) {
+    let bookingsOnDay = this.bookings.filter((booking) => {
+      return booking.date === date;
+    });
+    return this.getBookingsTotalCost(bookingsOnDay);
+  }
 }
 
 export default Hotel;

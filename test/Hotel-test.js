@@ -55,7 +55,7 @@ describe.only('Hotel', () => {
 
   it('should get the cost of bookings from a single date', () => {
     expect(hotel.getRevenueForDay('2020/04/22')).to.equal(150.01);
-    expect(hotel.getRevenueForDay('2020/01/24')).to.equal(150.01);
+    expect(hotel.getRevenueForDay('2020/01/24')).to.equal(400.01);
   });
 
   it('should get the a list of available rooms for a date', () => {
