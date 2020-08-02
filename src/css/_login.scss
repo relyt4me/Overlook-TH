@@ -18,7 +18,7 @@
 
 .login-form {
   width: 36vw;
-  height: 30vh;
+  height: 35vh;
   padding: 2vh;
   text-align: center;
   position: absolute;
@@ -29,6 +29,10 @@
   justify-content: space-around;
   background-color: rgba($cream-white, 0.6);
   border-radius: 2vh;
+  p {
+    font-size: 0.5em;
+    color: red;
+  }
 }
 
 /******* Media *******/
