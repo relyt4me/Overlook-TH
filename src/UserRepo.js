@@ -9,6 +9,10 @@ class UserRepo {
       return new Customer(customer.id, customer.name);
     });
   }
+
+  findCustomer(id) {
+    return this.customers.find((customer) => id === customer.id);
+  }
 }
 
 export default UserRepo;
