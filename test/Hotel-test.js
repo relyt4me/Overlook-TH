@@ -5,7 +5,7 @@ import Room from '../src/Room';
 import Booking from '../src/Booking';
 import Manager from '../src/Manager';
 
-describe.only('Hotel', () => {
+describe('Hotel', () => {
   let hotel, room1, room2, room3, booking1, booking2, booking3, booking4, booking5, manager;
   before(() => {
     room1 = new Room(1, 'suite', true, 'queen', 1, 100.01);
