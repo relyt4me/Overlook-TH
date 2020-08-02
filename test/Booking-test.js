@@ -34,16 +34,4 @@ describe('Booking', () => {
   it('should have no service charges by default', () => {
     expect(booking.roomServiceCharges).to.eql([]);
   });
-
-  it('should have a cost', () => {
-    expect(booking.cost).to.equal(358.4);
-  });
-
-  it('should ensure the cost is a number and return 0 if NaN', () => {
-    const bookingOops = (booking = new Booking('5fwrgu4i7k55hl6sz', 9, '2020/04/22', 15, '358.4'));
-    const bookingOops2 = (booking = new Booking('5fwrgu4i7k55hl6sz', 9, '2020/04/22', 15, 'potatoe'));
-
-    expect(bookingOops.cost).to.equal(358.4);
-    expect(bookingOops2.cost).to.equal(0);
-  });
 });
