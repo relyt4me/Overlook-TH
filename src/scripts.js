@@ -19,7 +19,7 @@ function startApp() {
       data.hotel = instantiateHotel(allData.roomsData, allData.bookingsData);
     })
     .then(() => {
-      console.log(data.customerRepo.findCustomer(70));
+      document.getElementById('login-button').disabled = false;
     })
     .catch((err) => console.log(err.message));
 }
