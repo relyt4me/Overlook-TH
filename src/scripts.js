@@ -33,24 +33,6 @@ function startApp() {
     .catch((err) => console.log(err.message));
 }
 
-/*
-click login 
-  see if user name is manager
-    if manager check password to be correct
-      if correct
-        make current user manager switch page to manager
-      if not correct
-        change text of input to 'Incorrect Username or Password
-    if not manager >
-      check if userName exist in user Repo
-        if it does check if password is correct
-          if correct
-            make current user user from Id and change to customer page
-          if not
-            change text of the input to 'Incorrect Username or Password
-        if does not change text of the input to 'Incorrect Username or Password'
-*/
-
 function loginClicked(event) {
   event.preventDefault();
   const enteredUsername = document.getElementById('username').value;
@@ -63,12 +45,6 @@ function loginClicked(event) {
   } else {
     dom.changeInnerTextID('error-msg', 'Incorrect Username or Password');
   }
-}
-
-function isPasswordCorrect(userID, givenPassword) {
-  return data.customerRepo.customers.some((customer) => {
-    return userID === customer.id && givenPassword === customer.password;
-  });
 }
 
 function instantiateHotel(roomData, bookingData) {
@@ -93,4 +69,10 @@ function instantiateBookings(bookingData) {
     return new Booking(booking.id, booking.udserID, booking.date, booking.roomNumber);
   });
   return allBookings;
+}
+
+function isPasswordCorrect(userID, givenPassword) {
+  return data.customerRepo.customers.some((customer) => {
+    return userID === customer.id && givenPassword === customer.password;
+  });
 }
