@@ -5,7 +5,6 @@ class Booking {
     this.date = date;
     this.roomNumber = roomNumber;
     this.roomServiceCharges = [];
-    this.cost = parseFloat(cost) || 0;
   }
 }
 
