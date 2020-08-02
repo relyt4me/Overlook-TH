@@ -4,15 +4,24 @@ import Manager from './Manager';
 import Room from './Room';
 import Booking from './Booking';
 import Hotel from './Hotel';
+import DomManipulation from './DomManipulation';
 
 const data = {
   customerRepo: null,
   hotel: null,
 };
+let dom;
 
 window.onload = startApp();
 
+document.addEventListener('click', (event) => {
+  if (event.target.id === 'login-button') {
+    loginClicked(event);
+  }
+});
+
 function startApp() {
+  dom = new DomManipulation();
   fetchData()
     .then((allData) => {
       data.customerRepo = new UserRepo(allData.usersData);
@@ -46,11 +55,13 @@ function loginClicked(event) {
   event.preventDefault();
   const enteredUsername = document.getElementById('username').value;
   const enteredPassword = document.getElementById('password').value;
-  if (enteredUsername === 'manager') {
-    enteredPassword === data.hotel.manager.password ? loginManager() : incorrectLogin();
+  let customersID = data.customerRepo.getCustomerID(enteredUsername);
+  if (enteredUsername === 'manager' && enteredPassword === data.hotel.manager.password) {
+    loginManager();
+  } else if (customersID && isPasswordCorrect(customersID, enteredPassword)) {
+    loginUser();
   } else {
-    let customersID = data.customerRepo.getCustomerID();
-    customersID ? loginUser(data.customerRepo.findCustomer(customersID)) : incorrectLogin();
+    dom.changeInnerTextID('error-msg', 'Incorrect Username or Password');
   }
 }
 
