@@ -10,6 +10,13 @@ class Hotel {
     });
     return matchingBooking ? false : true;
   }
+
+  getBookingsTotalCost(setOfBookings) {
+    return setOfBookings.reduce((totalCost, booking) => {
+      let bookingRoom = this.rooms.find((room) => booking.roomNumber === room.number);
+      return totalCost + bookingRoom.costPerNight;
+    }, 0);
+  }
 }
 
 export default Hotel;
