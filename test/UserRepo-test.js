@@ -3,7 +3,7 @@ const expect = chai.expect;
 import UserRepo from '../src/UserRepo';
 import Customer from '../src/Customer';
 
-describe('UserRepo', () => {
+describe.only('UserRepo', () => {
   let userRepo, userData;
   before(() => {
     userData = [
@@ -28,7 +28,7 @@ describe('UserRepo', () => {
         name: 'Rhiannon Little',
       },
     ];
-    userRepo = new UserRepo(usersData);
+    userRepo = new UserRepo(userData);
   });
   it('should be a function', () => {
     expect(UserRepo).to.be.a('function');
