@@ -34,7 +34,7 @@ describe('UserRepo', () => {
     expect(UserRepo).to.be.a('function');
   });
 
-  it('should be an instance of User', () => {
+  it('should be an instance of UserRepo', () => {
     expect(userRepo).to.be.an.instanceOf(UserRepo);
   });
 
