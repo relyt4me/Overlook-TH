@@ -5,15 +5,20 @@ const spies = require('chai-spies');
 chai.use(spies);
 
 describe.only('DomUpdates', () => {
-  let domUpdater;
+  let domUpdater, myElement, listOfSections;
 
   before(() => {});
 
   beforeEach(() => {
     domUpdater = new DomManipulation();
     global.document = {};
-    chai.spy.on(document, ['getElementById', 'querySelectorAll'], () => {
-      return { innerText: '' };
+    myElement = { innerText: 'this', className: 'wonderbread' };
+    listOfSections = [{ hidden: false }];
+    chai.spy.on(document, ['getElementById'], () => {
+      return myElement;
+    });
+    chai.spy.on(document, ['querySelectorAll'], () => {
+      return [{ hidden: false }];
     });
   });
 
@@ -31,24 +36,25 @@ describe.only('DomUpdates', () => {
     expect(document.getElementById).to.have.been.called.with('total-spent-by-user');
   });
 
+  it('should be able to change the innerText of the element', () => {
+    domUpdater.changeInnerTextID('total-spent-by-user', 'HELLO');
+
+    expect(myElement.innerText).to.equal('HELLO');
+  });
+
   it('should call getElementByID with the correct arguments in changeClassList', () => {
     domUpdater.changeClassList('full-body', 'HELLO');
 
     expect(document.getElementById).to.have.been.called.with('full-body');
   });
 
-  it('should call querySelectorAll with the correct arguments in hideSection', () => {
-    domUpdater.hideSection('cst-item', 'HELLO');
+  it('should be able to change the classList of the element', ())
 
-    expect(document.querySelectorAll).to.have.been.called.with('cst-item');
+  it('should call querySelectorAll with the correct arguments in viewSections', () => {
+    domUpdater.viewSections('.cst-item', true);
+
+    expect(document.querySelectorAll).to.have.been.called.with('.cst-item');
   });
-
-  it('should call querySelectorAll with the correct arguments in unhideSection', () => {
-    domUpdater.unhideSection('cst-item', 'HELLO');
-
-    expect(document.querySelectorAll).to.have.been.called.with('cst-item');
-  });
-
   // it('should call getElementById each time changeInnerTextID is called in XXXX') {
 
   // }

@@ -3,7 +3,14 @@ class DomUManipulation {
     document.getElementById(id).innerText = text;
   }
   changeClassList(id, classes) {
-    document.getElementById(id).classList = '';
+    document.getElementById(id).className = classes;
+  }
+
+  viewSections(className, isShown) {
+    const allOfSection = document.querySelectorAll(className);
+    allOfSection.forEach((section) => {
+      section.hidden = isShown;
+    });
   }
   // addActivityHTML(activityRepo, id, user, dataType) {
   //   const innerHTML = `<p>streak on: ${activityRepo.getStreak(user.id, dataType)}</p>`;
