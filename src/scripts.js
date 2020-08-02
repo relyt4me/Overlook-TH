@@ -2,6 +2,7 @@ import fetchData from './fetchAllData';
 import UserRepo from './UserRepo';
 import Manager from './Manager';
 import Room from './Room';
+import Booking from './Booking';
 
 const data = {
   customerRepo: null,
@@ -24,7 +25,15 @@ function instantiateManager() {
 }
 
 function instantiateRooms(roomData) {
-  allRooms = roomData.map((room) => {
+  const allRooms = roomData.map((room) => {
     return new Room(room.number, room.RoomType, room.bidet, room.bedSize, room.numBeds, room.costPerNight);
   });
+  return allRooms;
+}
+
+function instatiateBookings(bookingData) {
+  const allBookings = bookingData.map((booking) => {
+    return new Booking(booking.id, booking.udserID, booking.date, booking.roomNumber);
+  });
+  return allBookings;
 }
