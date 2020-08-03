@@ -28,7 +28,7 @@ document.addEventListener('click', (event) => {
     dom.displayMgrAddBooking();
   } else if (event.target.id === 'customer-search-button') {
     event.preventDefault();
-    // customerSearchClicked();
+    customerSearchClicked();
   }
 });
 
@@ -139,4 +139,14 @@ function bookThisRoom(userID, date, roomNumber) {
       dom.displayCustomerBookings(currentUser);
     })
     .catch((err) => console.log(err.message));
+}
+
+function customerSearchClicked() {
+  const searchedCustomerID = data.UserRepo.getCustomerID(document.getElementById('customer-name').value);
+  if (searchedCustomerID) {
+    searchedCustomer = data.UserRepo.findCustomer(searchedCustomerID);
+    dom.displayCustomersCurrentReservations(searchedCustomer, '2020/08/04');
+  } else {
+    dom.displayNoCustomerFound();
+  }
 }
