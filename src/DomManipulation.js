@@ -106,6 +106,7 @@ class DomUManipulation {
 
   displayNoCustomerFound() {
     this.viewSections('.search-err-msg', false);
+    this.viewSections('.searched-customer-name', true);
   }
 }
 

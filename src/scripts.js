@@ -142,9 +142,9 @@ function bookThisRoom(userID, date, roomNumber) {
 }
 
 function customerSearchClicked() {
-  const searchedCustomerID = data.customerRepo.getCustomerID(document.getElementById('customer-name').value);
-  if (searchedCustomerID) {
-    searchedCustomer = data.UserRepo.findCustomer(searchedCustomerID);
+  const matchingCustomer = data.customerRepo.findCustomerByName(document.getElementById('customer-name').value);
+  if (matchingCustomer) {
+    searchedCustomer = matchingCustomer;
     dom.renderManagerPage(searchedCustomer, data.hotel, '2020/08/04');
   } else {
     dom.displayNoCustomerFound();
