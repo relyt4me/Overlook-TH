@@ -10,7 +10,7 @@ const data = {
   customerRepo: null,
   hotel: null,
 };
-let dom, currentUser;
+let dom, currentUser, searchedCustomer;
 
 window.onload = startApp();
 
@@ -22,6 +22,13 @@ document.addEventListener('click', (event) => {
     dom.displayCustomerBookings(currentUser);
   } else if (event.target.className === 'book-room-button') {
     bookThisRoom(currentUser.id, document.getElementById('room-date-search').value, event.target.id);
+  } else if (event.target.id === 'show-current-customer-info') {
+    dom.displayCustomersCurrentReservations(searchedCustomer, '2020/08/04');
+  } else if (event.target.id === 'show-add-customer-booking') {
+    dom.displayMgrAddBooking();
+  } else if (event.target.id === 'customer-search-button') {
+    event.preventDefault();
+    // customerSearchClicked();
   }
 });
 
@@ -94,9 +101,9 @@ function loginClicked(event) {
 }
 
 function loginManager() {
-  //some dom updates
   currentUser = data.hotel.manager;
-  dom.renderManagerPage(data.customerRepo.customers[0], data.hotel, '2020/08/04');
+  searchedCustomer = data.customerRepo.customers[0];
+  dom.renderManagerPage(searchedCustomer, data.hotel, '2020/08/04');
 }
 
 function loginCustomer(id) {
