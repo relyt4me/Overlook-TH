@@ -102,6 +102,10 @@ class DomUManipulation {
     this.changeInnerTextID('hotel-capacity', hotel.getPercentOccupied(date));
     this.changeInnerTextID('todays-revenue', hotel.getRevenueForDay(date));
   }
+
+  displayNoCustomerFound() {
+    this.changeInnerTextID('customer-search-btn', 'NO SUCH CUSTOMER Search Again');
+  }
 }
 
 export default DomUManipulation;
