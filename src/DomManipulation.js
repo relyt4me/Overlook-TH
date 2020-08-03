@@ -104,7 +104,7 @@ class DomUManipulation {
   }
 
   displayNoCustomerFound() {
-    this.changeInnerTextID('customer-search-btn', 'NO SUCH CUSTOMER Search Again');
+    this.changeInnerTextID('search-err-msg', 'NO SUCH CUSTOMER Search Again');
   }
 }
 
