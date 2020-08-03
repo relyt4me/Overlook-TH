@@ -65,9 +65,35 @@ describe('DomUpdates', () => {
 
     expect(listOfSections[0].hidden).to.equal(true);
   });
-  // it('should call getElementById each time changeInnerTextID is called in XXXX') {
 
-  // }
+  it('should be able to sort bookings by date', () => {
+    let firstBooking = {
+      id: '5fwrgu4i7k55hl6sz',
+      userID: 1,
+      date: '2020/04/22',
+      roomNumber: 15,
+      roomServiceCharges: [],
+    };
+    let secondBooking = {
+      id: '5fwrgu4i7k55hl6t6',
+      userID: 1,
+      date: '2020/01/10',
+      roomNumber: 12,
+      roomServiceCharges: [],
+    };
+    let thirdBooking = {
+      id: '5fwrgu4i7k55hl6t7',
+      userID: 1,
+      date: '2020/02/16',
+      roomNumber: 7,
+      roomServiceCharges: [],
+    };
+    const allBookings = [firstBooking, secondBooking, thirdBooking];
+
+    const sortedBookings = domUpdater.getSortedBookings(allBookings);
+
+    expect(sortedBookings).to.eql([firstBooking, thirdBooking, secondBooking]);
+  });
 
   // it('should call getElementById each time changeInnerTextID is called in XXXX') {
 

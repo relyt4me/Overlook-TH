@@ -17,6 +17,15 @@ window.onload = startApp();
 document.addEventListener('click', (event) => {
   if (event.target.id === 'login-button') {
     loginClicked(event);
+  } else if (event.target.id === 'view-my-bookings') {
+    event.preventDefault();
+    dom.displayCustomerBookings(currentUser);
+  }
+});
+
+document.addEventListener('change', (event) => {
+  if (event.target.id === 'room-choice' || event.target.id === 'room-date-search') {
+    searchRoomsForCustomer();
   }
 });
 
@@ -46,7 +55,7 @@ function instantiateManager() {
 
 function instantiateRooms(roomData) {
   const allRooms = roomData.map((room) => {
-    return new Room(room.number, room.RoomType, room.bidet, room.bedSize, room.numBeds, room.costPerNight);
+    return new Room(room.number, room.roomType, room.bidet, room.bedSize, room.numBeds, room.costPerNight);
   });
   return allRooms;
 }
@@ -91,6 +100,7 @@ function loginManager() {
 function loginCustomer(id) {
   //some dom updates
   currentUser = data.customerRepo.findCustomer(id);
+  dom.renderCustomerPage(currentUser, data.hotel);
   console.log(currentUser);
 }
 
@@ -98,4 +108,12 @@ function isPasswordCorrect(userID, givenPassword) {
   return data.customerRepo.customers.some((customer) => {
     return userID === customer.id && givenPassword === customer.password;
   });
+}
+
+function searchRoomsForCustomer() {
+  console.log(document.getElementById('room-date-search').value);
+  let chosenDate = document.getElementById('room-date-search').value;
+  chosenDate = chosenDate.replace(/-/g, '/');
+  const chosenRoomType = document.getElementById('room-choice').value;
+  dom.displayAvailableRooms(data.hotel, chosenDate, chosenRoomType);
 }
