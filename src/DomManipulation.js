@@ -73,9 +73,27 @@ class DomUManipulation {
     this.viewSections('.mgr-item', false);
     this.changeInnerTextID('searched-customer-name', startingCustomer.name);
     this.changeInnerTextID('sch-cust-spent', hotel.getBookingsTotalCost(startingCustomer.bookings));
-    this.changeInnerTextID('rooms-available', hotel.getAvailableRooms(todaysDate).length);
-    this.changeInnerTextID('hotel-capacity', hotel.getPercentOccupied(todaysDate));
-    this.changeInnerHtmlID('todays-revenue', hotel.getRevenueForDay(todaysDate));
+    this.populateStatsDisplay(hotel, todaysDate);
+    this.displayCustomersCurrentReservations(startingCustomer, todaysDate);
+  }
+
+  displayCustomersCurrentReservations(customer, todaysDate) {
+    const sortedCustomerBookings = this.getSortedBookings(customer.bookings);
+    const dateToCompare = parseInt(todaysDate.split('/').join(''));
+    const innerHTMLOfBookings = sortedCustomerBookings.map((booking) => {
+      let futureBooking = dateToCompare < parseInt(booking.date.split('/').join('')) ? '' : 'hidden';
+      return `<li class="user-booking" id="${booking.id}-booking">
+          <p>Room ${booking.roomNumber} ${booking.date}</p>
+          <button id="${booking.id}" ${futureBooking}>Remove</button>
+        </li>`;
+    });
+    this.changeInnerHtmlID('user-bookings', innerHTMLOfBookings.join(''));
+  }
+
+  populateStatsDisplay(hotel, date) {
+    this.changeInnerTextID('rooms-available', hotel.getAvailableRooms(date).length);
+    this.changeInnerTextID('hotel-capacity', hotel.getPercentOccupied(date));
+    this.changeInnerTextID('todays-revenue', hotel.getRevenueForDay(date));
   }
 }
 
