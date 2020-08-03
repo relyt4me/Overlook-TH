@@ -20,6 +20,8 @@ document.addEventListener('click', (event) => {
   } else if (event.target.id === 'view-my-bookings') {
     event.preventDefault();
     dom.displayCustomerBookings(currentUser);
+  } else if (event.target.className === 'book-room-button') {
+    bookThisRoom(currentUser.id, document.getElementById('room-date-search'), event.target.id);
   }
 });
 
@@ -117,3 +119,5 @@ function searchRoomsForCustomer() {
   const chosenRoomType = document.getElementById('room-choice').value;
   dom.displayAvailableRooms(data.hotel, chosenDate, chosenRoomType);
 }
+
+function bookThisRoom(userID, date, roomNumber) {}

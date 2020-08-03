@@ -57,10 +57,13 @@ class DomUManipulation {
       return `<li id="room-${room.number}" class="room-card">
           <img src="./images/luggage.png" alt="Luggage Icon" />
           <p class="room-info">${room.numBeds} ${room.bedSize} $${room.costPerNight} Bidet ${hasBidet}</p>
-          <button id="book-room-${room.number}">Book #${room.number}</button>
+          <button class="book-room-button" id="${room.number}">Book #${room.number}</button>
         </li>`;
     });
     this.changeInnerHtmlID('available-rooms', roomsAsHtml.join(''));
+    if (availableRooms.length === 0) {
+      this.changeInnerHtmlID('available-rooms', '<h1 style="color: red">No Rooms Available, Please Pick Another Date</h1>');
+    }
   }
 }
 
