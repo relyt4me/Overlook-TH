@@ -24,6 +24,10 @@ class DomUManipulation {
     this.viewSections('.cst-item', false);
     this.viewSections('.mgr-item', true);
     this.changeInnerTextID('total-spent-by-user', hotel.getBookingsTotalCost(customer.bookings));
+    this.displayCustomerBookings(customer);
+  }
+
+  displayCustomerBookings(customer) {
     this.changeInnerHtmlID('available-rooms', this.bookingsAsList(customer.bookings));
   }
 
@@ -44,6 +48,19 @@ class DomUManipulation {
       let dateB = parseInt(bookingB.date.split('/').join(''));
       return dateB - dateA;
     });
+  }
+
+  displayAvailableRooms(hotel, date, type) {
+    const availableRooms = hotel.getAvailableRoomTypeAndDate(date, type);
+    const roomsAsHtml = availableRooms.map((room) => {
+      const hasBidet = room.hasBidet ? '✅' : '❌';
+      return `<li id="room-${room.number}" class="room-card">
+          <img src="./images/luggage.png" alt="Luggage Icon" />
+          <p class="room-info">${room.numBeds} ${room.bedSize} $${room.costPerNight} Bidet ${hasBidet}</p>
+          <button id="book-room-1">Book #1</button>
+        </li>`;
+    });
+    this.changeInnerHtmlID('available-rooms', roomsAsHtml.join(''));
   }
 }
 

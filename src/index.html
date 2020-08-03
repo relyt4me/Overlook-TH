@@ -27,9 +27,9 @@
         <label for="room-choice">Room Choice</label>
         <input type="date" name="room-date-search" id="room-date-search" value="2021-01-01" />
         <select name="type" id="room-choice">
-          <option value="single-room">Single Room</option>
-          <option value="junior-suite">Junior Suite</option>
-          <option value="residential-suite">Resident Suite</option>
+          <option value="single room">Single Room</option>
+          <option value="junior suite">Junior Suite</option>
+          <option value="residential suite">Resident Suite</option>
           <option value="suite">Suite</option>
         </select>
         <p>$<span id="total-spent-by-user"></span> spent</p>
@@ -37,17 +37,7 @@
       </form>
     </section>
     <section alt="Available Rooms" class="available-rooms-section cst-item" hidden>
-      <ul class="available-rooms" id="available-rooms">
-        <li id="room-1" class="room-card">
-          <img src="./images/luggage.png" alt="Luggage Icon" />
-          <p class="room-info"><span id="bed-info">2 twins</span> <span id="room-cost">$340</span> <span id="room-bidet">Bidet ✅</span></p>
-          <button id="book-room-1">Book #1</button>
-        </li>
-        <li id="room-2" class="room-card">
-          <img src="./images/luggage.png" alt="Luggage Icon" />
-          <p class="room-info">Booked Room #1 for 2020/01/28</p>
-        </li>
-      </ul>
+      <ul class="available-rooms" id="available-rooms"></ul>
     </section>
     <section alt="Manager Search Navigation" class="mgr-item" id="mgr-search-section" hidden>
       <form rule="Manager Customer Search" action="" class="mgr-customer-search">
