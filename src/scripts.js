@@ -102,7 +102,8 @@ function loginClicked(event) {
 
 function loginManager() {
   currentUser = data.hotel.manager;
-  dom.renderManagerPage(data.customerRepo.customers[0], data.hotel, '2020/08/04');
+  searchedCustomer = data.customerRepo.customers[0];
+  dom.renderManagerPage(searchedCustomer, data.hotel, '2020/08/04');
 }
 
 function loginCustomer(id) {
