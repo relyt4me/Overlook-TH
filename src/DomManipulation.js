@@ -90,6 +90,11 @@ class DomUManipulation {
     this.changeInnerHtmlID('user-bookings', innerHTMLOfBookings.join(''));
   }
 
+  displayMgrAddBooking() {
+    this.viewSections('current-customer-bookings', true);
+    this.viewSections('add-booking-current-customer', false);
+  }
+
   populateStatsDisplay(hotel, date) {
     this.changeInnerTextID('rooms-available', hotel.getAvailableRooms(date).length);
     this.changeInnerTextID('hotel-capacity', hotel.getPercentOccupied(date));
