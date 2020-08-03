@@ -26,9 +26,9 @@ document.addEventListener('click', (event) => {
     dom.displayCustomersCurrentReservations(searchedCustomer, '2020/08/04');
   } else if (event.target.id === 'show-add-customer-booking') {
     dom.displayMgrAddBooking();
-  } else if (event.target.id === 'customer-search-button') {
+  } else if (event.target.id === 'customer-search-btn') {
     event.preventDefault();
-    // customerSearchClicked();
+    customerSearchClicked();
   }
 });
 
@@ -139,4 +139,14 @@ function bookThisRoom(userID, date, roomNumber) {
       dom.displayCustomerBookings(currentUser);
     })
     .catch((err) => console.log(err.message));
+}
+
+function customerSearchClicked() {
+  const matchingCustomer = data.customerRepo.findCustomerByName(document.getElementById('customer-name').value);
+  if (matchingCustomer) {
+    searchedCustomer = matchingCustomer;
+    dom.renderManagerPage(searchedCustomer, data.hotel, '2020/08/04');
+  } else {
+    dom.displayNoCustomerFound();
+  }
 }

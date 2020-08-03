@@ -14,6 +14,10 @@ class UserRepo {
     return this.customers.find((customer) => id === customer.id);
   }
 
+  findCustomerByName(name) {
+    return this.customers.find((customer) => name === customer.name);
+  }
+
   getCustomerID(username) {
     const matchingCustomer = this.customers.find((customer) => username === customer.username);
     if (matchingCustomer) {

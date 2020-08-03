@@ -71,6 +71,7 @@ class DomUManipulation {
     this.viewSections('.lgn-item', true);
     this.viewSections('.cst-item', true);
     this.viewSections('.mgr-item', false);
+    this.viewSections('.search-err-msg', true);
     this.changeInnerTextID('searched-customer-name', startingCustomer.name);
     this.changeInnerTextID('sch-cust-spent', hotel.getBookingsTotalCost(startingCustomer.bookings));
     this.populateStatsDisplay(hotel, todaysDate);
@@ -101,6 +102,11 @@ class DomUManipulation {
     this.changeInnerTextID('rooms-available', hotel.getAvailableRooms(date).length);
     this.changeInnerTextID('hotel-capacity', hotel.getPercentOccupied(date));
     this.changeInnerTextID('todays-revenue', hotel.getRevenueForDay(date));
+  }
+
+  displayNoCustomerFound() {
+    this.viewSections('.search-err-msg', false);
+    this.viewSections('.searched-customer-name', true);
   }
 }
 
