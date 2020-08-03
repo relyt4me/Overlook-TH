@@ -23,7 +23,11 @@ document.addEventListener('click', (event) => {
   }
 });
 
-document.getElementById('room-choice').addEventListener('change', searchRoomsForCustomer);
+document.addEventListener('change', (event) => {
+  if (event.target.id === 'room-choice' || event.target.id === 'room-date-search') {
+    searchRoomsForCustomer();
+  }
+});
 
 function startApp() {
   dom = new DomManipulation();
