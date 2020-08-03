@@ -78,6 +78,8 @@ class DomUManipulation {
   }
 
   displayCustomersCurrentReservations(customer, todaysDate) {
+    this.viewSections('.current-customer-bookings', false);
+    this.viewSections('.add-booking-current-customer', true);
     const sortedCustomerBookings = this.getSortedBookings(customer.bookings);
     const dateToCompare = parseInt(todaysDate.split('/').join(''));
     const innerHTMLOfBookings = sortedCustomerBookings.map((booking) => {
@@ -91,8 +93,8 @@ class DomUManipulation {
   }
 
   displayMgrAddBooking() {
-    this.viewSections('current-customer-bookings', true);
-    this.viewSections('add-booking-current-customer', false);
+    this.viewSections('.current-customer-bookings', true);
+    this.viewSections('.add-booking-current-customer', false);
   }
 
   populateStatsDisplay(hotel, date) {

@@ -28,7 +28,7 @@ document.addEventListener('click', (event) => {
     dom.displayMgrAddBooking();
   } else if (event.target.id === 'customer-search-button') {
     event.preventDefault();
-    customerSearchClicked();
+    // customerSearchClicked();
   }
 });
 
