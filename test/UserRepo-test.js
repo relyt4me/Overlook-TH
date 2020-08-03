@@ -66,4 +66,14 @@ describe('UserRepo', () => {
   it('should return undefined if that customer username does not exist', () => {
     expect(userRepo.getCustomerID('customer12')).to.eql(undefined);
   });
+
+  it('should be able to find a customer by a given name', () => {
+    const myCustomer = new Customer(4, 'Kennedi Emard');
+
+    expect(userRepo.findCustomerByName('Kennedi Emard')).to.eql(myCustomer);
+  });
+
+  it('should return undefined if that customer name does not exist', () => {
+    expect(userRepo.findCustomerByName('ugly')).to.eql(undefined);
+  });
 });
