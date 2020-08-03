@@ -66,12 +66,13 @@ class DomUManipulation {
     }
   }
 
-  renderManagerPage(startingCustomer) {
+  renderManagerPage(startingCustomer, hotel) {
     this.changeClassList('full-body', 'manager-page');
     this.viewSections('.lgn-item', true);
     this.viewSections('.cst-item', true);
     this.viewSections('.mgr-item', false);
     this.changeInnerTextID('searched-customer-name', startingCustomer.name);
+    this.changeInnerTextID('sch-cust-spent', hotel.getBookingsTotalCost(startingCustomer.bookings));
   }
 }
 

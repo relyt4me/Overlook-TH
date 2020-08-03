@@ -96,7 +96,7 @@ function loginClicked(event) {
 function loginManager() {
   //some dom updates
   currentUser = data.hotel.manager;
-  dom.renderManagerPage(data.customerRepo.customers[0]);
+  dom.renderManagerPage(data.customerRepo.customers[0], data.hotel);
 }
 
 function loginCustomer(id) {
