@@ -44,7 +44,7 @@
         <label for="customer-name">Customer Name</label>
         <input type="text" name="customer-name" id="customer-name" />
         <button type="submit" id="customer-search-btn">Search</button>
-        <p class="searched-customer-name" id="searched-customer-name">Bethany $334.33 spent</p>
+        <p class="searched-customer-name"><span id="searched-customer-name"></span> $<span id="sch-cust-spent"></span> spent</p>
       </form>
     </section>
     <section class="mgr-item" hidden>
@@ -61,7 +61,7 @@
         </li>
       </ul>
     </section>
-    <section class="add-booking-current-customer mgr-item" id="mgr-add-section" hidden>
+    <section class="add-booking-current-customer" id="mgr-add-section" hidden>
       <form rule="Manager Add Booking" action="" class="mgr-add-booking">
         <label for="booking-user-id">User ID</label>
         <input type="number" name="booking-user-id" id="booking-user-id" />
