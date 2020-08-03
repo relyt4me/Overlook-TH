@@ -21,7 +21,7 @@ document.addEventListener('click', (event) => {
     event.preventDefault();
     dom.displayCustomerBookings(currentUser);
   } else if (event.target.className === 'book-room-button') {
-    bookThisRoom(currentUser.id, document.getElementById('room-date-search'), event.target.id);
+    bookThisRoom(currentUser.id, document.getElementById('room-date-search').value, event.target.id);
   }
 });
 
@@ -120,4 +120,18 @@ function searchRoomsForCustomer() {
   dom.displayAvailableRooms(data.hotel, chosenDate, chosenRoomType);
 }
 
-function bookThisRoom(userID, date, roomNumber) {}
+function bookThisRoom(userID, date, roomNumber) {
+  let chosenDate = date.replace(/-/g, '/');
+  data.hotel.manager.createBooking(userID, chosenDate, roomNumber);
+  fetchData()
+    .then((allData) => {
+      data.customerRepo = new UserRepo(allData.usersData);
+      data.hotel = instantiateHotel(allData.roomsData, allData.bookingsData);
+    })
+    .then(() => {
+      addUserBookings();
+      currentUser = data.customerRepo.findCustomer(userID);
+      dom.displayCustomerBookings(currentUser);
+    })
+    .catch((err) => console.log(err.message));
+}
