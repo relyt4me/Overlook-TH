@@ -71,6 +71,7 @@ class DomUManipulation {
     this.viewSections('.lgn-item', true);
     this.viewSections('.cst-item', true);
     this.viewSections('.mgr-item', false);
+    this.viewSections('.search-err-msg', true);
     this.changeInnerTextID('searched-customer-name', startingCustomer.name);
     this.changeInnerTextID('sch-cust-spent', hotel.getBookingsTotalCost(startingCustomer.bookings));
     this.populateStatsDisplay(hotel, todaysDate);
@@ -104,7 +105,7 @@ class DomUManipulation {
   }
 
   displayNoCustomerFound() {
-    this.changeInnerTextID('search-err-msg', 'NO SUCH CUSTOMER Search Again');
+    this.viewSections('.search-err-msg', false);
   }
 }
 
