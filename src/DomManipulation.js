@@ -65,6 +65,14 @@ class DomUManipulation {
       this.changeInnerHtmlID('available-rooms', '<h1 style="color: red">No Rooms Available, Please Pick Another Date</h1>');
     }
   }
+
+  renderManagerPage(startingCustomer) {
+    this.changeClassList('full-body', 'manager-page');
+    this.viewSections('.lgn-item', true);
+    this.viewSections('.cst-item', true);
+    this.viewSections('.mgr-item', false);
+    this.changeInnerTextID('searched-customer-name', startingCustomer.name);
+  }
 }
 
 export default DomUManipulation;
