@@ -57,7 +57,7 @@ class DomUManipulation {
       return `<li id="room-${room.number}" class="room-card">
           <img src="./images/luggage.png" alt="Luggage Icon" />
           <p class="room-info">${room.numBeds} ${room.bedSize} $${room.costPerNight} Bidet ${hasBidet}</p>
-          <button id="book-room-1">Book #1</button>
+          <button id="book-room-${room.number}">Book #${room.number}</button>
         </li>`;
     });
     this.changeInnerHtmlID('available-rooms', roomsAsHtml.join(''));

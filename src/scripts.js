@@ -19,7 +19,7 @@ document.addEventListener('click', (event) => {
     loginClicked(event);
   } else if (event.target.id === 'view-my-bookings') {
     event.preventDefault();
-    dom.displayCustomersBookings(currentUser);
+    dom.displayCustomerBookings(currentUser);
   }
 });
 
