@@ -96,14 +96,12 @@ function loginClicked(event) {
 function loginManager() {
   //some dom updates
   currentUser = data.hotel.manager;
-  console.log(currentUser);
+  dom.renderManagerPage(data.customerRepo.customers[0]);
 }
 
 function loginCustomer(id) {
-  //some dom updates
   currentUser = data.customerRepo.findCustomer(id);
   dom.renderCustomerPage(currentUser, data.hotel);
-  console.log(currentUser);
 }
 
 function isPasswordCorrect(userID, givenPassword) {
