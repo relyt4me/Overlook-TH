@@ -47,6 +47,7 @@ describe('Hotel', () => {
 
   it('should tell you if a room is not available', () => {
     expect(hotel.isRoomAvailable('2020/04/22', 2)).to.equal(false);
+    expect(hotel.isRoomAvailable('2020/02/16', 3)).to.equal(false);
   });
 
   it('should give me the cost of a group of bookings', () => {
