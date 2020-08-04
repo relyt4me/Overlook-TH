@@ -121,7 +121,6 @@ function isPasswordCorrect(userID, givenPassword) {
 }
 
 function searchRoomsForCustomer() {
-  console.log(document.getElementById('room-date-search').value);
   let chosenDate = document.getElementById('room-date-search').value;
   chosenDate = chosenDate.replace(/-/g, '/');
   const chosenRoomType = document.getElementById('room-choice').value;
@@ -130,8 +129,9 @@ function searchRoomsForCustomer() {
 
 function bookThisRoom(userID, date, roomNumber) {
   let chosenDate = date.replace(/-/g, '/');
-  data.hotel.manager.createBooking(userID, chosenDate, roomNumber);
-  fetchData()
+  data.hotel.manager
+    .createBooking(userID, chosenDate, roomNumber)
+    .then(() => fetchData())
     .then((allData) => {
       data.customerRepo = new UserRepo(allData.usersData);
       data.hotel = instantiateHotel(allData.roomsData, allData.bookingsData);
@@ -156,10 +156,21 @@ function customerSearchClicked() {
 
 function bookRoomByManager() {
   const desiredDate = document.getElementById('booking-date').value.replace(/-/g, '/');
-  const desiredRoom = document.getElementById('booking-room-num').value;
+  const desiredRoom = parseInt(document.getElementById('booking-room-num').value);
   if (data.hotel.isRoomAvailable(desiredDate, desiredRoom)) {
-    dom.changeInnerTextID('booking-availability-message', 'Booked!');
-    data.hotel.manager.createBooking(searchedCustomer.id, desiredDate, desiredRoom);
+    data.hotel.manager
+      .createBooking(searchedCustomer.id, desiredDate, desiredRoom)
+      .then(() => fetchData())
+      .then((allData) => {
+        data.customerRepo = new UserRepo(allData.usersData);
+        data.hotel = instantiateHotel(allData.roomsData, allData.bookingsData);
+      })
+      .then(() => {
+        addUserBookings();
+        currentUser = data.hotel.manager;
+        dom.changeInnerTextID('booking-availability-message', 'Booked!');
+      })
+      .catch((err) => console.log(err.message));
   } else {
     dom.changeInnerTextID('booking-availability-message', 'Unavailable');
   }
