@@ -47,7 +47,7 @@ document.addEventListener('change', (event) => {
 function startApp() {
   dom = new DomManipulation();
   currentDate = moment().format('YYYY/MM/DD');
-  console.log(currentDate);
+  dom.setDateFields();
   fetchData()
     .then((allData) => {
       data.customerRepo = new UserRepo(allData.usersData);
