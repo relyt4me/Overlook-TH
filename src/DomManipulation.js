@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 class DomUManipulation {
   changeInnerTextID(id, text) {
     document.getElementById(id).innerText = text;
@@ -107,6 +109,14 @@ class DomUManipulation {
   displayNoCustomerFound() {
     this.viewSections('.search-err-msg', false);
     this.viewSections('.searched-customer-name', true);
+  }
+
+  setDateFields() {
+    const allDateInputs = document.querySelectorAll('.date-selector');
+    let today = moment().format('YYYY/MM/DD').split('/').join('-');
+    allDateInputs.forEach((dateInput) => {
+      dateInput.setAttribute('min', today);
+    });
   }
 }
 
