@@ -1,105 +1,115 @@
-# Webpack Starter Kit
+# Overlook Hotel
 
-## Clone This Repo
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 
-That's right, _clone_ not fork. You will use this repo multiple times, but you can only fork a repository once. So here is what you need to do to clone the repo and still be able to push changes to your repo:
+ 
+![logo](https://user-images.githubusercontent.com/62810019/89347441-03633e80-d668-11ea-9c58-10659a94a768.png)
 
-1. Clone down this repo. Since you don't want to name your project "webpack-starter-kit", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Remove the default remote: `git remote rm origin` (notice that `git remote -v` not gives you back nothing)
-1. Create a new repo on GitHub with the name of `[what you want to name the repo]` to be consistent with naming
-1. Copy the address that you would use to clone down this repo - something like `git@github.com:...`
-1. Add this remote to your cloned down repo: `git remote add origin [address you copied in the previous step]` - do not include the brackets
+## Table of Contents
 
-Now try to commit something and push it up to your new repo. If everything is setup correctly, you should see the changes on GitHub.
+- [Overview](#overview)
+- [How to use](#how-to-use)
+- [Installation](#installation)
+- [Functionality](#functionality)
+- [Contributing](#contributing)
+- [Acknowledgements and Resources](#acknowledgements-and-resources)
 
-## Setup
+<!-- Breif Description -->
 
-After one person has gone through the steps of cloning down this repo and editing the remote, everyone should clone down the repo. 
+## Overview
 
-Then install the library dependencies. Run:
+Overlook Hotel is a website that can be used for Customers and Managers to login see their daily data and manage bookings. The Customers after login are shown the amoun they have spent at Overlook Hotel and have the ability to search for rooms by date and room type. They can then book that room and see it updated in their dashboard. As a manager you can search for customers to see their data and bookings as well as remove or add bookings for that customer.
 
-```bash
-npm install
-```
+This is a project for Turing school to utilize our knowledge on a variety of front end tools and get a better understanding of the request/response cycle. It also tested our understanding of Class inheritance as well as array prototype methods.
 
-To verify that it is setup correctly, run `npm start` in your terminal. Go to `http://localhost:8080/` and you should see a page with some `h1` text, Turing logo image and a beautiful gradient background. If that's the case, you're good to go. Enter `control + c` in your terminal to stop the server at any time.
+## How to use
 
-## Where to Add Your Code
+  * As a customer you can login with the username of customer12 or whatever number you would like to match a customer and the username of overlook2020. Then on your customer page scroll through the bookings you have. If you select a date from the date field it will give you a list of all rooms that match your date and type available that you can book.   
+  
+  
+  *  As a manager you can login with username manager and password overlook2020. Then you can search a customer by name, for example "Era Hand." After this you can see that customers past and future booking and remove any booking that are in the future. If you select the Add tab you can then search and add bookings for that user by selecting dates and room numbers.
 
-### JavaScript
+## Built With
 
-You have to be very intentional with where you add your feature code. This repo uses a tool called [webpack](https://webpack.js.org/) to combine many JavaScript files into one big file. Webpack enables you to have many, separate JavaScript files to keep your code organized and readable. Webpack expects all of your code files to be in a specific place, or else it doesn't know how to combine them all behind the scenes.
+- ex: javascript
+- ex: CSS/Sass
+- ex: HTML
+- ex: Webpack
 
-**Create all of your feature code files in the `src` directory.**
+## Installation
 
-Since code is separated into multiple files, you need to use the `import` and `export` syntax to share code across file.
+**Fork this repository:**
 
-Here is a video that walks through some information about [import and export](https://www.youtube.com/watch?v=_3oSWwapPKQ). There are a lot of resources out there about `import` and `export`, and resources will sometimes call them `ES6 modules`. It's something you will see in React and beyond.
+https://github.com/relyt4me/Overlook-TH
 
-### HTML
+**Clone your forked repository**
 
-Add the HTML you need in the `index.html` file in the `./src` directory. There is some boilerplate HTML that exists from the start that you can modify.
+`git clone` and the copied URL
 
-### CSS (SCSS/SASS)
+**Change into the directory and install the project dependencies**
 
-This project is setup to use SCSS/SASS files by default instead of your regular CSS files. Add your SCSS files in the `src/css` directory. There is a `base.scss` file already there, but you can change this file and add multiple SCSS files in this directory.
+`cd` into directory and run `npm install` for dependencies
 
-This might sound weird, but you need to `import` your SCSS files in the JavaScript entry file (`index.js`) for the styles to be applied to your HTML. The example `base.scss` file has already been imported in the JavaScript entry file as an example.
+### How to see the product
 
-### Images
+From the terminal run `npm start` and in your browser go to the given port.
 
-Add your image files in the `src/images` directory. Similar to CSS files, you need to `import` image files in the JavaScript entry file (`index.js`). Then go into the HTML and add an `img` element with the `src` attribute pointing to the `images` directory. There is an example in the `index.html` file for you to see.
+## Functionality
 
-## How to View Your Code in Action
+* The pages from a desktop view.  
+![desktop login to manager and customer](documents/login-desktop.gif)
 
-In the terminal, run:
+* The pages from a phone view.   
+![phone login to manager and customer](documents/login-phone.gif)
 
-```bash
-npm start
-```
+* Customers ability to interact including booking.  
+![customer page interactions](documents/guest-books.gif)
 
-You will see a bunch of lines output to your terminal. One of those lines will be something like:
+* Managers ability to interact including booking and removing.   
+![manager page interactions](documents/manager-books.gif)
 
-```bash
-Project is running at http://localhost:8080/
-```
 
-Go to `http://localhost:8080/` in your browser to view your code running in the browser.
+<!-- CONTRIBUTING -->
 
----
+## Contributing
 
-## Test Files Organization
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.  
+   
+See the [open issues](https://github.com/relyt4me/Overlook-TH/issues) for a list of proposed features (and known issues).
 
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
+- Fork the Project
 
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `box-test.js`.
+- Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 
-## Running Your Tests
+- Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 
-Run your test suite using the command:
+- Push to the Branch (`git push origin feature/AmazingFeature`)
 
-```bash
-npm test
-```
+- Open a Pull Request
 
-The test results will output to the terminal.
+## Authors
 
----
+👤 **Tyler Haglund (He/Him**
+- Github: [relyt4me](https://github.com/relyt4me)
+- LinkedIn: [Tyler](www.linkedin.com/in/tyler-he-him-haglund-043b511aa)
 
-## Linting Your Code
 
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit - the linter is still running successfully.
+## Acknowledgements and Resources
 
-Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory. 
+[Original Project Link](https://frontend.turing.io/projects/overlook.html)
 
-## Webpack?
+Code Review with Mentor Jarret Kong
 
-If you look in the `package.json` file, you'll see one of the library dependencies called `webpack`. If you're interested in learning more about what Webpack is and how it works behind the scenes, take a look through the [Webpack configuration documentation](https://webpack.js.org/concepts/).
+<!-- MARKDOWN LINKS & IMAGES -->
 
-## Deploying to GitHub Pages
-
-_If you are finished with the functionality and testing of your project_, then you can consider deploying your project to the web! This way anyone can play it without cloning down your repo.
-
-[GitHub Pages](https://pages.github.com/) is a great way to deploy your project to the web. Don't worry about this until your project is free of bugs and well tested!
-
-If you _are_ done, you can follow [this procedure](./gh-pages-procedure.md) to get your project live on GitHub Pages.
+[contributors-shield]: https://img.shields.io/github/contributors/relyt4me/Overlook-TH.svg?style=flat-square
+[contributors-url]: https://github.com/relyt4me/Overlook-TH/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/relyt4me/Overlook-TH.svg?style=flat-square
+[forks-url]: https://github.com/relyt4me/Overlook-TH/network/members
+[stars-shield]: https://img.shields.io/github/stars/relyt4me/Overlook-TH.svg?style=flat-square
+[stars-url]: https://github.com/relyt4me/Overlook-TH/stargazers
+[issues-shield]: https://img.shields.io/github/issues/relyt4me/Overlook-TH.svg?style=flat-square
+[issues-url]: https://github.com/relyt4me/Overlook-TH/issues
