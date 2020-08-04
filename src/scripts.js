@@ -32,6 +32,8 @@ document.addEventListener('click', (event) => {
   } else if (event.target.id === 'booking-submit-button') {
     event.preventDefault();
     bookRoomByManager();
+  } else if (event.target.className === 'remove-booking-btn') {
+    deleteRoomByManager(event);
   }
 });
 
@@ -174,4 +176,21 @@ function bookRoomByManager() {
   } else {
     dom.changeInnerTextID('booking-availability-message', 'Unavailable');
   }
+}
+
+function deleteRoomByManager(event) {
+  const bookingID = parseInt(event.target.id);
+  data.hotel.manager
+    .removeBooking(bookingID)
+    .then(() => fetchData())
+    .then((allData) => {
+      data.customerRepo = new UserRepo(allData.usersData);
+      data.hotel = instantiateHotel(allData.roomsData, allData.bookingsData);
+    })
+    .then(() => {
+      addUserBookings();
+      searchedCustomer = data.customerRepo.findCustomer(searchedCustomer.id);
+      dom.displayCustomersCurrentReservations(searchedCustomer, '2020/08/04');
+    })
+    .catch((err) => console.log(err.message));
 }

@@ -87,7 +87,7 @@ class DomUManipulation {
       let futureBooking = dateToCompare < parseInt(booking.date.split('/').join('')) ? '' : 'hidden';
       return `<li class="user-booking" id="${booking.id}-booking">
           <p>Room ${booking.roomNumber} ${booking.date}</p>
-          <button id="${booking.id}" ${futureBooking}>Remove</button>
+          <button class="remove-booking-btn" id="${booking.id}" ${futureBooking}>Remove</button>
         </li>`;
     });
     this.changeInnerHtmlID('user-bookings', innerHTMLOfBookings.join(''));
