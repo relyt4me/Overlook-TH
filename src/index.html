@@ -25,7 +25,7 @@
       <form rule="Room Search" action="" class="room-search">
         <label for="room-date-search">Date</label>
         <label for="room-choice">Room Choice</label>
-        <input type="date" name="room-date-search" id="room-date-search" />
+        <input type="date" name="room-date-search" id="room-date-search" class="date-selector" />
         <select name="type" id="room-choice">
           <option value="single room">Single Room</option>
           <option value="junior suite">Junior Suite</option>
@@ -55,17 +55,12 @@
       </ul>
     </section>
     <section class="current-customer-bookings mgr-item" id="mgr-current-section" hidden>
-      <ul class="users-bookings" id="user-bookings">
-        <li class="user-booking" id="room-1-booking">
-          <p>Room <span id="booking-room-num">1</span> <span id="booking-room-date">2020/03/25</span></p>
-          <button id="remove-booking-1">Remove</button>
-        </li>
-      </ul>
+      <ul class="users-bookings" id="user-bookings"></ul>
     </section>
     <section class="add-booking-current-customer" id="mgr-add-section" hidden>
       <form rule="Manager Add Booking" action="" class="mgr-add-booking">
         <label for="booking-date">Date</label>
-        <input type="date" name="booking-date" id="booking-date" />
+        <input type="date" name="booking-date" id="booking-date" class="date-selector" />
         <label for="booking-room-number">Room Number</label>
         <input type="number" name="booking-room-number" id="booking-room-num" />
         <p id="booking-availability-message">Let's Check</p>
