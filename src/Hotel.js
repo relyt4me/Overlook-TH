@@ -5,16 +5,9 @@ class Hotel {
     this.manager = manager;
   }
   isRoomAvailable(date, roomNumber) {
-    // console.log('date', date);
-    // console.log('room', roomNumber);
-    // console.log(this.bookings);
     let matchingBooking = this.bookings.find((booking) => {
-      if (booking.date === date && booking.roomNumber === roomNumber) {
-        console.log('MATCH');
-      }
       return booking.date === date && booking.roomNumber === roomNumber;
     });
-    // console.log(matchingBooking);
     return matchingBooking ? false : true;
   }
 
