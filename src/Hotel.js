@@ -12,10 +12,12 @@ class Hotel {
   }
 
   getBookingsTotalCost(setOfBookings) {
-    return setOfBookings.reduce((totalCost, booking) => {
+    let totalCost = setOfBookings.reduce((totalCost, booking) => {
       let bookingRoom = this.rooms.find((room) => booking.roomNumber === room.number);
       return totalCost + bookingRoom.costPerNight;
     }, 0);
+
+    return totalCost.toFixed(2);
   }
 
   getRevenueForDay(date) {
