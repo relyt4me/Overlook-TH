@@ -29,6 +29,9 @@ document.addEventListener('click', (event) => {
   } else if (event.target.id === 'customer-search-btn') {
     event.preventDefault();
     customerSearchClicked();
+  } else if (event.target.id === 'booking-submit-button') {
+    event.preventDefault();
+    bookRoomByManager();
   }
 });
 
@@ -148,5 +151,16 @@ function customerSearchClicked() {
     dom.renderManagerPage(searchedCustomer, data.hotel, '2020/08/04');
   } else {
     dom.displayNoCustomerFound();
+  }
+}
+
+function bookRoomByManager() {
+  const desiredDate = document.getElementById('booking-date').value.replace(/-/g, '/');
+  const desiredRoom = document.getElementById('booking-room-num').value;
+  if (data.hotel.isRoomAvailable(desiredDate, desiredRoom)) {
+    dom.changeInnerTextID('booking-availability-message', 'Booked!');
+    data.hotel.manager.createBooking(searchedCustomer.id, desiredDate, desiredRoom);
+  } else {
+    dom.changeInnerTextID('booking-availability-message', 'Unavailable');
   }
 }
