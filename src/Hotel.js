@@ -12,10 +12,12 @@ class Hotel {
   }
 
   getBookingsTotalCost(setOfBookings) {
-    return setOfBookings.reduce((totalCost, booking) => {
+    let totalCost = setOfBookings.reduce((totalCost, booking) => {
       let bookingRoom = this.rooms.find((room) => booking.roomNumber === room.number);
       return totalCost + bookingRoom.costPerNight;
     }, 0);
+
+    return totalCost.toFixed(2);
   }
 
   getRevenueForDay(date) {
@@ -47,10 +49,6 @@ class Hotel {
   getPercentOccupied(date) {
     let fractionOfRooms = this.getAvailableRooms(date).length / this.rooms.length;
     return 100 - parseInt(fractionOfRooms * 100);
-  }
-
-  updateBookings(bookings) {
-    this.bookings = bookings;
   }
 }
 
