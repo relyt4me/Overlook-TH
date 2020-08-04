@@ -189,7 +189,7 @@ function deleteRoomByManager(event) {
     })
     .then(() => {
       addUserBookings();
-      currentUser = data.hotel.manager;
+      searchedCustomer = data.customerRepo.findCustomer(searchedCustomer.id);
       dom.displayCustomersCurrentReservations(searchedCustomer, '2020/08/04');
     })
     .catch((err) => console.log(err.message));
