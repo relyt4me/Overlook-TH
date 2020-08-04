@@ -27,8 +27,10 @@ This is a project for Turing school to utilize our knowledge on a variety of fro
 
 ## How to use
 
-   As a customer you can login with the username of customer12 or whatever number you would like to match a customer and the username of overlook2020. Then on your customer page scroll through the bookings you have. If you select a date from the date field it will give you a list of all rooms that match your date and type available that you can book.   
-   As a manager you can login with username manager and password overlook2020. Then you can search a customer by name, for example "Era Hand." After this you can see that customers past and future booking and remove any booking that are in the future. If you select the Add tab you can then search and add bookings for that user by selecting dates and room numbers.
+  * As a customer you can login with the username of customer12 or whatever number you would like to match a customer and the username of overlook2020. Then on your customer page scroll through the bookings you have. If you select a date from the date field it will give you a list of all rooms that match your date and type available that you can book.   
+  
+  
+  *  As a manager you can login with username manager and password overlook2020. Then you can search a customer by name, for example "Era Hand." After this you can see that customers past and future booking and remove any booking that are in the future. If you select the Add tab you can then search and add bookings for that user by selecting dates and room numbers.
 
 ## Built With
 
