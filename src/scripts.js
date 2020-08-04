@@ -5,12 +5,13 @@ import Room from './Room';
 import Booking from './Booking';
 import Hotel from './Hotel';
 import DomManipulation from './DomManipulation';
+import moment from 'moment';
 
 const data = {
   customerRepo: null,
   hotel: null,
 };
-let dom, currentUser, searchedCustomer;
+let dom, currentUser, searchedCustomer, currentDate;
 
 window.onload = startApp();
 
@@ -45,6 +46,8 @@ document.addEventListener('change', (event) => {
 
 function startApp() {
   dom = new DomManipulation();
+  currentDate = moment().format('YYYY/MM/DD');
+  console.log(currentDate);
   fetchData()
     .then((allData) => {
       data.customerRepo = new UserRepo(allData.usersData);
