@@ -177,3 +177,20 @@ function bookRoomByManager() {
     dom.changeInnerTextID('booking-availability-message', 'Unavailable');
   }
 }
+
+function deleteRoomByManager(event) {
+  const bookingID = parseInt(event.target.id);
+  data.hotel.manager
+    .removeBooking(bookingID)
+    .then(() => fetchData())
+    .then((allData) => {
+      data.customerRepo = new UserRepo(allData.usersData);
+      data.hotel = instantiateHotel(allData.roomsData, allData.bookingsData);
+    })
+    .then(() => {
+      addUserBookings();
+      currentUser = data.hotel.manager;
+      dom.displayCustomersCurrentReservations(searchedCustomer, '2020/08/04');
+    })
+    .catch((err) => console.log(err.message));
+}
