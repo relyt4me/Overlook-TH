@@ -24,7 +24,7 @@ document.addEventListener('click', (event) => {
   } else if (event.target.className === 'book-room-button') {
     bookThisRoom(currentUser.id, document.getElementById('room-date-search').value, event.target.id);
   } else if (event.target.id === 'show-current-customer-info') {
-    dom.displayCustomersCurrentReservations(searchedCustomer, '2020/08/04');
+    dom.displayCustomersCurrentReservations(searchedCustomer, currentDate);
   } else if (event.target.id === 'show-add-customer-booking') {
     dom.displayMgrAddBooking();
   } else if (event.target.id === 'customer-search-btn') {
@@ -111,7 +111,7 @@ function loginClicked(event) {
 function loginManager() {
   currentUser = data.hotel.manager;
   searchedCustomer = data.customerRepo.customers[0];
-  dom.renderManagerPage(searchedCustomer, data.hotel, '2020/08/04');
+  dom.renderManagerPage(searchedCustomer, data.hotel, currentDate);
 }
 
 function loginCustomer(id) {
@@ -153,7 +153,7 @@ function customerSearchClicked() {
   const matchingCustomer = data.customerRepo.findCustomerByName(document.getElementById('customer-name').value);
   if (matchingCustomer) {
     searchedCustomer = matchingCustomer;
-    dom.renderManagerPage(searchedCustomer, data.hotel, '2020/08/04');
+    dom.renderManagerPage(searchedCustomer, data.hotel, currentDate);
   } else {
     dom.displayNoCustomerFound();
   }
@@ -193,7 +193,7 @@ function deleteRoomByManager(event) {
     .then(() => {
       addUserBookings();
       searchedCustomer = data.customerRepo.findCustomer(searchedCustomer.id);
-      dom.displayCustomersCurrentReservations(searchedCustomer, '2020/08/04');
+      dom.displayCustomersCurrentReservations(searchedCustomer, currentDate);
     })
     .catch((err) => console.log(err.message));
 }
