@@ -32,6 +32,8 @@ document.addEventListener('click', (event) => {
   } else if (event.target.id === 'booking-submit-button') {
     event.preventDefault();
     bookRoomByManager();
+  } else if (event.target.className === 'remove-booking-btn') {
+    deleteRoomByManager(event);
   }
 });
 
