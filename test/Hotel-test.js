@@ -50,15 +50,6 @@ describe('Hotel', () => {
     expect(hotel.isRoomAvailable('2020/02/16', 3)).to.equal(false);
   });
 
-  it('should give me the cost of a group of bookings', () => {
-    expect(hotel.getBookingsTotalCost([booking1, booking3])).to.equal(150.01);
-  });
-
-  it('should get the cost of bookings from a single date', () => {
-    expect(hotel.getRevenueForDay('2020/04/22')).to.equal(150.01);
-    expect(hotel.getRevenueForDay('2020/01/24')).to.equal(400.01);
-  });
-
   it('should get the a list of available rooms for a date', () => {
     expect(hotel.getAvailableRooms('2020/04/22')).to.eql([room3]);
     expect(hotel.getAvailableRooms('2020/02/16')).to.eql([room1, room2]);
@@ -73,10 +64,5 @@ describe('Hotel', () => {
     expect(hotel.getPercentOccupied('2020/04/22')).to.equal(67);
     expect(hotel.getPercentOccupied('2020/02/16')).to.equal(34);
     expect(hotel.getPercentOccupied('2020/08/04')).to.equal(0);
-  });
-
-  it('should get update its bookings', () => {
-    hotel.updateBookings([booking3, booking2, booking5]);
-    expect(hotel.bookings).to.eql([booking3, booking2, booking5]);
   });
 });
